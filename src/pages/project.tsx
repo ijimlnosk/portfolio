@@ -1,8 +1,10 @@
+import ViewLayout from "../component/common/viewLayout"
+
 const Project = () => {
     return (
-        <div>
-            <div>Project</div>
-        </div>
+        <ViewLayout>
+            <div>PROJECT</div>
+        </ViewLayout>
     )
 }
 export default Project

@@ -1,8 +1,10 @@
+import ViewLayout from "../component/common/viewLayout"
+
 const About = () => {
     return (
-        <div>
-            <div>About</div>
-        </div>
+        <ViewLayout>
+            <div>ABOUT</div>
+        </ViewLayout>
     )
 }
 export default About

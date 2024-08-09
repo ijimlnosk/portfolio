@@ -21,7 +21,7 @@ const Home = () => {
                         setIsTypingDone(true)
                     }
                 }
-            }, 150)
+            }, 125)
             return timer
         }
 
