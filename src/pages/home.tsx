@@ -8,19 +8,39 @@ const Home = () => {
 
     useEffect(() => {
         const textArr = Array.from(text)
+        const hasVisited = sessionStorage.getItem("hasVisited")
 
-        const timer = setInterval(() => {
-            if (indexRef.current < textArr.length) {
-                setDisplayText(text.slice(0, indexRef.current + 1))
-                indexRef.current++
+        const startTyping = () => {
+            const timer = setInterval(() => {
+                if (indexRef.current < textArr.length) {
+                    setDisplayText(text.slice(0, indexRef.current + 1))
+                    indexRef.current++
 
-                if (indexRef.current >= textArr.length) {
-                    clearInterval(timer)
-                    setIsTypingDone(true)
+                    if (indexRef.current >= textArr.length) {
+                        clearInterval(timer)
+                        setIsTypingDone(true)
+                    }
                 }
+            }, 150)
+            return timer
+        }
+
+        let timer: number
+        if (hasVisited) {
+            // 이미 방문한 경우 바로 시작
+            timer = startTyping()
+            return () => clearInterval(timer)
+        } else {
+            // 첫 방문인 경우 2.5초 지연 후 시작
+            const delay = setTimeout(() => {
+                timer = startTyping()
+                sessionStorage.setItem("hasVisited", "true")
+            }, 2500)
+            return () => {
+                clearTimeout(delay)
+                clearInterval(timer)
             }
-        }, 100)
-        return () => clearInterval(timer)
+        }
     }, [])
 
     return (
