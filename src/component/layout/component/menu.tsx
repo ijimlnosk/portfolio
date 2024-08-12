@@ -29,7 +29,7 @@ const Menu = () => {
     }, [])
 
     return (
-        <div className="w-full h-full flex justify-start items-center">
+        <div className="w-full h-full flex justify-start items-center z-50">
             <div className="p-4">
                 <MenuIcon toggleMenu={toggleMenu} />
             </div>
