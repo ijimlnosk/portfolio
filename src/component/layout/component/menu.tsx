@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import MenuIcon from "./menuIcon"
+import AnimatedText from "../../common/animatedText"
 
 const Menu = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -42,7 +43,9 @@ const Menu = () => {
                     <ul className="space-y-40">
                         {menuItems.map((item, index) => (
                             <li key={index} className="cursor-pointer hover:text-gray-500 text-3xl">
-                                <a href={item.link}>{item.title}</a>
+                                <a href={item.link}>
+                                    <AnimatedText text={item.title} />
+                                </a>
                             </li>
                         ))}
                     </ul>
