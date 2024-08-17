@@ -1,9 +1,10 @@
 import ViewLayout from "../component/common/viewLayout"
+import ProjectList from "../component/project/projectList"
 
 const Project = () => {
     return (
         <ViewLayout>
-            <div>PROJECT</div>
+            <ProjectList />
         </ViewLayout>
     )
 }
