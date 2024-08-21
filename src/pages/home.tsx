@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import BlinkOrangeDiv from "../component/home/blinkOrangeDiv"
 
 const Home = () => {
     const text = "안녕하세요. Web FrontEnd Developer 김진솔 입니다."
@@ -44,15 +45,17 @@ const Home = () => {
     }, [])
 
     return (
-        <div className="w-full h-screen flex justify-center items-center">
-            <div>
-                <p
-                    className={`inline-block whitespace-nowrap overflow-hidden border-r-2 text-3xl ${isTypingDone ? "border-transparent" : "border-black animate-blink"}`}
-                >
-                    {displayText}
-                </p>
+        <>
+            <div className="w-full h-screen flex justify-center items-center">
+                <div>
+                    <p
+                        className={`inline-block whitespace-nowrap overflow-hidden border-r-2 text-3xl ${isTypingDone ? "border-transparent" : "border-black animate-blink"}`}
+                    >
+                        {displayText}
+                    </p>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 export default Home
