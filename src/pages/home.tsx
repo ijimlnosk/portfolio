@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react"
-import BlinkOrangeDiv from "../component/home/blinkOrangeDiv"
 
 const Home = () => {
     const text = "안녕하세요. Web FrontEnd Developer 김진솔 입니다."
