@@ -25,7 +25,7 @@ const Home = () => {
             return timer
         }
 
-        let timer: number
+        let timer: ReturnType<typeof setInterval>
         if (hasVisited) {
             // 이미 방문한 경우 바로 시작
             timer = startTyping()
