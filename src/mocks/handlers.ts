@@ -38,6 +38,25 @@ const mockProjects: ProjectItem[] = [
         link: [{ title: "깃허브", type: "github", url: "https://github.com/ThugDev/PurrTunes" }],
         distributeLink: "https://purr-tunes.vercel.app/",
     },
+    {
+        id: 3,
+        title: "Catch Poketmon",
+        subTitle: "포켓몬 잡기 사이트",
+        content: "",
+        thumbnail: "https://github.com/user-attachments/assets/95e36dc7-b25e-4cf6-9773-c41f126c20cf",
+        period: "2024.04 - 2024.05",
+        skill: ["React.js", "TypeScript"],
+        library: ["SWR", "Next-Auth", "tailwindCSS", "Jotai"],
+        link: [
+            { title: "깃허브", type: "github", url: "https://github.com/mobi-projects/catch-poket-mon" },
+            {
+                title: "회고",
+                type: "vlog",
+                url: "https://velog.io/@skek298/catchpokemon-Project-KPT-회고",
+            },
+        ],
+        distributeLink: "https://catchpoketmon.soljk.com/",
+    },
 ]
 
 export const handlers = [
