@@ -13,6 +13,8 @@ const ProjectList = () => {
         queryFn: getProject,
     })
 
+    console.log(projects)
+
     if (isLoading) return <div>Loading...</div>
     if (error) return <div>Error: {error.message}</div>
     if (!projects || projects.length === 0) return <div>No Project found</div>
