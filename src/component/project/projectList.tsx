@@ -13,17 +13,15 @@ const ProjectList = () => {
         queryFn: getProject,
     })
 
-    console.log(projects)
-
     if (isLoading) return <div>Loading...</div>
     if (error) return <div>Error: {error.message}</div>
     if (!projects || projects.length === 0) return <div>No Project found</div>
 
     return (
         <div className="w-full h-screen overflow-x-auto">
-            <div className=" w-full h-full inline-flex space-x-4 p-4">
+            <div className=" w-full h-full inline-flex space-x-4 pl-[20%]">
                 {projects.map((item, index) => (
-                    <div key={index} className=" w-full h-full flex-none pl-[12%]">
+                    <div key={index} className=" w-full h-full flex-none ">
                         <ProjectCard item={item} />
                     </div>
                 ))}
