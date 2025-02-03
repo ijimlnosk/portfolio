@@ -9,16 +9,10 @@ export type SkillsType = {
     id: number
     title: string
     icon: string
-    position: {
-        x: number
-        y: number
-    }
 }
 
-export type DraggableItemProps = {
-    item: SkillsType
-    position: {
-        x: number
-        y: number
-    }
+export type SkillIconProps = {
+    skill: SkillsType
+    index: number
+    moveSkill: (fromIndex: number, toIndex: number) => void
 }
