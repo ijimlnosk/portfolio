@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client"
 import App from "./App.tsx"
 import "./index.css"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { DndProvider } from "react-dnd"
+import { HTML5Backend } from "react-dnd-html5-backend"
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -23,9 +25,11 @@ async function prepare() {
 prepare().then(() => {
     createRoot(document.getElementById("root")!).render(
         <StrictMode>
-            <QueryClientProvider client={queryClient}>
-                <App />
-            </QueryClientProvider>
+            <DndProvider backend={HTML5Backend}>
+                <QueryClientProvider client={queryClient}>
+                    <App />
+                </QueryClientProvider>
+            </DndProvider>
         </StrictMode>,
     )
 })
