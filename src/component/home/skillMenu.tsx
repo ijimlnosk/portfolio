@@ -14,10 +14,12 @@ const SkillMenu = () => {
     }
 
     return (
-        <div className="flex bg-[#eaeefa] bg-opacity-80 p-1 mb-2 rounded-2xl shadow-md fixed bottom-0">
-            {skills.map((skill, index) => (
-                <SkillIcon key={skill.id} skill={skill} index={index} moveSkill={moveSkill} />
-            ))}
+        <div className="fixed bottom-2">
+            <div className="flex bg-[#eaeefa] bg-opacity-80 p-1  rounded-2xl shadow-md">
+                {skills.map((skill, index) => (
+                    <SkillIcon key={skill.id} skill={skill} index={index} moveSkill={moveSkill} />
+                ))}
+            </div>
         </div>
     )
 }

@@ -1,30 +1,44 @@
 import { useDrag, useDrop } from "react-dnd"
 import { ITEM_TYPE } from "../../constants/skills"
 import { SkillIconProps } from "./type"
+import { motion } from "framer-motion"
 
 const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
-    const [, ref] = useDrag({
+    const [{ isDragging }, dragRef] = useDrag({
         type: ITEM_TYPE,
-        item: { index },
+        item: { index, skill },
+        collect: monitor => ({
+            isDragging: monitor.isDragging(),
+        }),
     })
 
-    const [, drop] = useDrop({
+    const [, dropRef] = useDrop({
         accept: ITEM_TYPE,
         hover: (draggedItem: { index: number }) => {
+            // 다른 index로 넘어왔을 때만 순서 변경
             if (draggedItem.index !== index) {
                 moveSkill(draggedItem.index, index)
+                // draggedItem의 index를 현재 index로 업데이트
                 draggedItem.index = index
             }
         },
     })
 
     return (
-        <div
-            ref={node => ref(drop(node))}
-            className="p-2 m-1 bg-gray-200 rounded-lg cursor-pointer hover:scale-110 transition"
+        <motion.div
+            layout
+            className={`p-2 m-1 bg-gray-200 rounded-lg cursor-pointer transition ${isDragging ? "opacity-0" : "opacity-100"}`}
+            transition={{
+                layout: {
+                    type: "spring",
+                    duration: 0.5,
+                    ease: "easeInOut",
+                    bounce: 0.1,
+                },
+            }}
         >
-            <img src={skill.icon} alt={skill.title} className="w-12 h-12" />
-        </div>
+            <img ref={node => dragRef(dropRef(node))} src={skill.icon} alt={skill.title} className="w-12 h-12" />
+        </motion.div>
     )
 }
 
