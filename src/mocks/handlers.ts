@@ -59,6 +59,42 @@ const mockProjects: ProjectItem[] = [
     },
 ]
 
+const mockUserInfo = {
+    userName: "김진솔",
+    position: "프론트엔드 개발자",
+    email: "skek298@gmail.com",
+    phoneNumber: "010-7669-3414",
+    birthday: "1996년 03월 26일",
+    university: "대림대학교",
+    major: "컴퓨터 소프트웨어 학과",
+    developerValues: [
+        {
+            title: "지속적인 학습",
+            description:
+                "다양한 언어와 기술을 학습하는 것은 문제 해결 능력을 키우는 데 도움을 주며 나아가 개발 역량을 확장하는 데 필수적인 요소라고 생각합니다. 새로운 개념을 익히고 적용하는 과정에서 깊이 있는 이해를 쌓아가는 것에 흥미를 느끼고 있습니다. 현재는 React Native 공부를 하고 있습니다.",
+        },
+        {
+            title: "협업",
+            description:
+                "개발의 필수 요건 중 하나인 협업은 원활한 소통이 수반돼야 한다고 생각합니다. 체계화된 PR과 정보 공유는 팀원 간의 이해를 돕는 동시에 병목 현상을 파악해 프로젝트의 진행 상황을 투명하게 유지할 수 있습니다. 개발자 커뮤니티에서 동료 개발자들과 협업하는 과정에서 협업의 중요성을 느꼈고 “협업이 원활한 개발자”가 되기 위해 노력하고 있습니다.",
+        },
+    ],
+    moreInfo: [
+        {
+            title: "github",
+            nickName: "@ijimlnosk",
+            description: "click icon or chevron to visit my github",
+            icon: "/assets/icon/githubIcon.svg",
+        },
+        {
+            title: "velog",
+            nickName: "@skek298",
+            description: "click icon or chevron to visit my velog",
+            icon: "/assets/icon/velogIcon.svg",
+        },
+    ],
+}
+
 export const handlers = [
     http.get(`/api/projects`, () => {
         return HttpResponse.json(mockProjects)
@@ -74,5 +110,8 @@ export const handlers = [
                 status: 404,
             })
         }
+    }),
+    http.get("/api/userInfo", () => {
+        return HttpResponse.json(mockUserInfo)
     }),
 ]
