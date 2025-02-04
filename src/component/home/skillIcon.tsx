@@ -2,6 +2,7 @@ import { useDrag, useDrop } from "react-dnd"
 import { ITEM_TYPE } from "../../constants/skills"
 import { SkillIconProps } from "./type"
 import { motion } from "framer-motion"
+import SkillTitleView from "./skillTitleView"
 
 const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
     // 드래그 훅
@@ -34,17 +35,18 @@ const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
     return (
         <motion.div
             layout
-            className={`p-2 m-1 bg-gray-200 rounded-lg cursor-pointer transition ${isDragging ? "opacity-0" : "opacity-100"}`}
+            className={` group relative p-2 m-1 bg-gray-200 rounded-lg cursor-pointer transition ${isDragging ? "opacity-0" : "opacity-100"}`}
             transition={{
                 layout: {
                     type: "spring",
-                    duration: 0.5,
+                    duration: 1,
                     ease: "easeInOut",
                     bounce: 0.1,
                 },
             }}
         >
             <img ref={node => dragRef(dropRef(node))} src={skill.icon} alt={skill.title} className="w-12 h-12" />
+            <SkillTitleView skillTitle={skill.title} />
         </motion.div>
     )
 }

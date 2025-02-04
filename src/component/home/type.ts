@@ -16,3 +16,7 @@ export type SkillIconProps = {
     index: number
     moveSkill: (fromIndex: number, toIndex: number) => void
 }
+
+export type SkillTitleViewProps = {
+    skillTitle: string
+}

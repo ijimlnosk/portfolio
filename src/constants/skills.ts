@@ -13,6 +13,4 @@ export const Skills = [
     { id: 12, title: "Setting", icon: "/assets/icon/SettingIcon.svg" },
 ]
 
-export const rows = [Skills.slice(0, 3), Skills.slice(3, 7), Skills.slice(7, 11), Skills.slice(11, 12)]
-
 export const ITEM_TYPE = "SKILL_ITEM"

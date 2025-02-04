@@ -4,6 +4,8 @@ import { SkillsType } from "./type"
 import { Skills } from "../../constants/skills"
 
 const SkillMenu = () => {
+    const dividerIndices = [3, 7, 11]
+
     // Skills 상수 배열을 useState로 관리
     // 드래그 앤 드랍 시 순서가 바뀔 때, 상태를 업데이트하기 위함
     const [skills, setSkills] = useState<SkillsType[]>(Skills)
@@ -19,9 +21,12 @@ const SkillMenu = () => {
 
     return (
         <div className="fixed bottom-2">
-            <div className="flex bg-[#eaeefa] bg-opacity-80 p-1  rounded-2xl shadow-md">
+            <div className="flex bg-[#eaeefa] bg-opacity-80 p-1 rounded-2xl shadow-md">
                 {skills.map((skill, index) => (
-                    <SkillIcon key={skill.id} skill={skill} index={index} moveSkill={moveSkill} />
+                    <div key={skill.id} className="flex items-center">
+                        <SkillIcon key={skill.id} skill={skill} index={index} moveSkill={moveSkill} />
+                        {dividerIndices.includes(index + 1) && <div className=" mx-2 w-[1px] h-12  bg-[#818FAF]" />}
+                    </div>
                 ))}
             </div>
         </div>
