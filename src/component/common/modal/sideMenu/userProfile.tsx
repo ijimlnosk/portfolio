@@ -16,7 +16,7 @@ const UserProfile = ({ userInfo, isSelected, setIsSelected }: UserProfileProps) 
                 <img src={userInfo.userProfile} className="rounded-full w-20 h-20" />
             </div>
             <div
-                className={`w-24 h-full text-white flex flex-col gap-1 justify-center ${isSelected ? "text-white" : "text-black"}`}
+                className={`w-24 h-full flex flex-col gap-1 justify-center ${isSelected ? "text-white" : "text-black"}`}
             >
                 <p className="font-semibold text-md">{userInfo.userName.split("").join(" ")}</p>
                 <p className="font-light text-xs">{userInfo.position}</p>
