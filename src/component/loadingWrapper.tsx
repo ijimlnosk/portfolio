@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import Loading from "./loading"
 
-const LoadingWrapper = () => {
+interface LoadingWrapperProps {
+    children: ReactNode
+}
+
+const LoadingWrapper: React.FC<LoadingWrapperProps> = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -19,10 +23,14 @@ const LoadingWrapper = () => {
         }
     }, [])
 
-    return isLoading ? (
-        <div className="w-full h-screen flex justify-center items-center">
-            <Loading />
-        </div>
-    ) : null
+    if (isLoading) {
+        return (
+            <div className="w-full h-screen flex justify-center items-center">
+                <Loading />
+            </div>
+        )
+    }
+
+    return <>{children}</>
 }
 export default LoadingWrapper

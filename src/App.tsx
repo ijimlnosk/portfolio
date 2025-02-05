@@ -5,8 +5,9 @@ import LoadingWrapper from "./component/loadingWrapper"
 const App = () => {
     return (
         <>
-            <LoadingWrapper />
-            <RouterProvider router={router} />
+            <LoadingWrapper>
+                <RouterProvider router={router} />
+            </LoadingWrapper>
         </>
     )
 }
