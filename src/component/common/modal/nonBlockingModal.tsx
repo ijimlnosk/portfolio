@@ -1,18 +1,16 @@
 import { useState } from "react"
 import ReactDOM from "react-dom"
-import Minimized from "./minimized"
-import Close from "./close"
 import { NonBlockingModalProps } from "./type"
 import { useDraggable } from "../../../hooks/useDraggable"
+import SideMenu from "./sideMenu/sideMenu"
 
-const NonBlockingModal = ({ isOpen, onClose, children }: NonBlockingModalProps) => {
+const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingModalProps) => {
     const [isMinimized, setIsMinimized] = useState(false)
+    const [isSelectedMenuIndex, setIsSelectedMenuIndex] = useState(false)
     const minimizedArea = document.getElementById("minimized-area")
     const container = isMinimized && minimizedArea ? minimizedArea : document.body
 
-    const { position, isDragging, dragRef, dropRef } = useDraggable({ x: 200, y: 200 })
-
-    console.log(position)
+    const { position, isDragging, dragRef, dropRef } = useDraggable({ x: 500, y: 100 })
 
     if (!isOpen) return null
 
@@ -24,18 +22,25 @@ const NonBlockingModal = ({ isOpen, onClose, children }: NonBlockingModalProps) 
         ) : (
             <div
                 ref={dropRef}
-                className="fixed inset-0 z-50 bg-transparent pointer-events-none"
+                className=" w-full fixed inset-0 z-50 bg-transparent pointer-events-none"
                 style={{
                     left: position.x,
                     top: position.y,
                     opacity: isDragging ? "0" : "1",
                 }}
             >
-                <div ref={dragRef} className=" absolute p-4 bg-white shadow-lg rounded-lg pointer-events-auto">
-                    <div className="flex flex-row gap-2 ">
-                        <Close onClose={onClose} />
-                        <Minimized isMinimized={isMinimized} setIsMinimized={setIsMinimized} />
-                    </div>
+                <div
+                    ref={dragRef}
+                    className=" w-[980px] h-[820px] absolute flex flex-row bg-white shadow-lg rounded-lg pointer-events-auto"
+                >
+                    <SideMenu
+                        userInfo={userInfo}
+                        onClose={onClose}
+                        isMinimized={isMinimized}
+                        setIsMinimized={setIsMinimized}
+                        isSelected={isSelectedMenuIndex}
+                        setIsSelected={setIsSelectedMenuIndex}
+                    />
                     <div>{children}</div>
                 </div>
             </div>

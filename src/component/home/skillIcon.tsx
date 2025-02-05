@@ -5,9 +5,12 @@ import SkillTitleView from "./skillTitleView"
 import { useState } from "react"
 import NonBlockingModal from "../common/modal/nonBlockingModal"
 import { renderModalContent } from "./skillModalContent"
+import { useUserInfo } from "../../hooks/useUserInfo"
 
 const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
     const [isModalOpen, setIsModalOPen] = useState(false)
+
+    const { data, isLoading, isError } = useUserInfo()
 
     // 드래그 훅
     // item: 드래그할 때 전달할 데이터(index와 skill 정보)
@@ -45,8 +48,10 @@ const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
                 <img ref={node => dragRef(dropRef(node))} src={skill.icon} alt={skill.title} className="w-12 h-12" />
                 <SkillTitleView skillTitle={skill.title} />
             </div>
-            <NonBlockingModal isOpen={isModalOpen} onClose={() => setIsModalOPen(false)}>
+            <NonBlockingModal isOpen={isModalOpen} onClose={() => setIsModalOPen(false)} userInfo={data}>
                 {renderModalContent(skill.title)}
+                {isLoading && <div>Loading...</div>}
+                {isError && <div>유저 데이터를 불러오는데 실패했습니다.</div>}
             </NonBlockingModal>
         </>
     )

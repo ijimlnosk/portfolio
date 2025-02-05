@@ -61,6 +61,7 @@ const mockProjects: ProjectItem[] = [
 
 const mockUserInfo = {
     userName: "김진솔",
+    userProfile: "https://github.com/user-attachments/assets/6cda5600-fa72-4d7c-94e6-0ad3ffc23abf",
     position: "프론트엔드 개발자",
     email: "skek298@gmail.com",
     phoneNumber: "010-7669-3414",
@@ -93,6 +94,8 @@ const mockUserInfo = {
             icon: "/assets/icon/velogIcon.svg",
         },
     ],
+    skills: ["JavaScript", "TypeScript", "React", "ReactNative", "Next.js", "Kotlin", "swift"],
+    tools: ["", "", "", "", ""],
 }
 
 export const handlers = [

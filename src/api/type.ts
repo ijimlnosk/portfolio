@@ -11,6 +11,7 @@ export type MoreInfo = {
 
 export type getUserInfoResponse = {
     userName: string
+    userProfile: string
     position: string
     email: string
     phoneNumber: string
@@ -19,4 +20,6 @@ export type getUserInfoResponse = {
     major: string
     developerValues: DeveloperValue[]
     moreInfo: MoreInfo[]
+    skills: string[]
+    tools: string[]
 }

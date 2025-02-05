@@ -15,9 +15,13 @@ const Setting = () => {
     }
 
     return (
-        <div className="w-[600px] h-[680px] py-4 flex flex-row">
-            <div className="w-[20%]">side menu</div>
-            <div>{data?.userName}</div>
+        <div className="w-full h-[740px] py-4 flex flex-row">
+            <div>
+                {data?.userName}
+                <div>
+                    <img src={data?.userProfile} alt="profile image" />
+                </div>
+            </div>
         </div>
     )
 }
