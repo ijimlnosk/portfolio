@@ -28,7 +28,7 @@ const SkillMenu = () => {
                         {dividerIndices.includes(index + 1) && <div className=" mx-2 w-[1px] h-12  bg-[#818FAF]" />}
                     </div>
                 ))}
-                <div id="minimized-area" className="mx-4 flex items-center"></div>
+                <div id="minimized-area" className="mx-4 flex items-center" />
             </div>
         </div>
     )

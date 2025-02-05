@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import SkillTitleView from "./skillTitleView"
 import { useState } from "react"
 import NonBlockingModal from "../common/modal/nonBlockingModal"
+import { renderModalContent } from "./skillModalContent"
 
 const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
     const [isModalOpen, setIsModalOPen] = useState(false)
@@ -38,24 +39,24 @@ const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
 
     return (
         <>
-            <motion.div
-                layout
+            <div
+                // layout
                 className={` group relative p-2 m-1 bg-gray-200 rounded-lg cursor-pointer transition ${isDragging ? "opacity-0" : "opacity-100"}`}
-                transition={{
-                    layout: {
-                        type: "spring",
-                        duration: 1,
-                        ease: "easeInOut",
-                        bounce: 0.1,
-                    },
-                }}
+                // transition={{
+                //     layout: {
+                //         type: "spring",
+                //         duration: 1,
+                //         ease: "easeInOut",
+                //         bounce: 0.1,
+                //     },
+                // }}
                 onClick={() => setIsModalOPen(true)}
             >
                 <img ref={node => dragRef(dropRef(node))} src={skill.icon} alt={skill.title} className="w-12 h-12" />
                 <SkillTitleView skillTitle={skill.title} />
-            </motion.div>
+            </div>
             <NonBlockingModal isOpen={isModalOpen} onClose={() => setIsModalOPen(false)}>
-                <div>{skill.title}</div>
+                {renderModalContent(skill.title)}
             </NonBlockingModal>
         </>
     )

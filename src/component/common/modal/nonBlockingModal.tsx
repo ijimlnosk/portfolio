@@ -3,36 +3,17 @@ import ReactDOM from "react-dom"
 import Minimized from "./minimized"
 import Close from "./close"
 import { NonBlockingModalProps } from "./type"
-import { useDrag, useDrop } from "react-dnd"
-
-const ITEM_TYPE = "NON_BLOCKING_MODAL"
+import { useDraggable } from "../../../hooks/useDraggable"
 
 const NonBlockingModal = ({ isOpen, onClose, children }: NonBlockingModalProps) => {
     const [isMinimized, setIsMinimized] = useState(false)
-    const [position, setPosition] = useState({ x: 200, y: 200 })
     const minimizedArea = document.getElementById("minimized-area")
     const container = isMinimized && minimizedArea ? minimizedArea : document.body
 
-    const [{ isDragging }, dragRef] = useDrag({
-        type: ITEM_TYPE,
-        item: () => {
-            return { x: position.x, y: position.y }
-        },
-        collect: monitor => ({
-            isDragging: monitor.isDragging(),
-        }),
-    })
+    const { position, isDragging, dragRef, dropRef } = useDraggable({ x: 200, y: 200 })
 
-    const [, dropRef] = useDrop({
-        accept: ITEM_TYPE,
-        hover: (item: { x: number; y: number }, monitor) => {
-            const delta = monitor.getDifferenceFromInitialOffset()
-            if (!delta) return
-            const newX = item.x + delta.x
-            const newY = item.y + delta.y
-            setPosition({ x: newX, y: newY })
-        },
-    })
+    console.log(position)
+
     if (!isOpen) return null
 
     return ReactDOM.createPortal(
@@ -44,9 +25,13 @@ const NonBlockingModal = ({ isOpen, onClose, children }: NonBlockingModalProps) 
             <div
                 ref={dropRef}
                 className="fixed inset-0 z-50 bg-transparent pointer-events-none"
-                style={{ left: position.x, top: position.y, opacity: isDragging ? "0" : "1" }}
+                style={{
+                    left: position.x,
+                    top: position.y,
+                    opacity: isDragging ? "0" : "1",
+                }}
             >
-                <div ref={dragRef} className=" absolute w-72 p-4 bg-white shadow-lg rounded pointer-events-auto">
+                <div ref={dragRef} className=" absolute p-4 bg-white shadow-lg rounded-lg pointer-events-auto">
                     <div className="flex flex-row gap-2 ">
                         <Close onClose={onClose} />
                         <Minimized isMinimized={isMinimized} setIsMinimized={setIsMinimized} />
