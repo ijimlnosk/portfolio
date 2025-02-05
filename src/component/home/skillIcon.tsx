@@ -1,7 +1,6 @@
 import { useDrag, useDrop } from "react-dnd"
 import { ITEM_TYPE } from "../../constants/skills"
 import { SkillIconProps } from "./type"
-import { motion } from "framer-motion"
 import SkillTitleView from "./skillTitleView"
 import { useState } from "react"
 import NonBlockingModal from "../common/modal/nonBlockingModal"
@@ -40,16 +39,7 @@ const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
     return (
         <>
             <div
-                // layout
                 className={` group relative p-2 m-1 bg-gray-200 rounded-lg cursor-pointer transition ${isDragging ? "opacity-0" : "opacity-100"}`}
-                // transition={{
-                //     layout: {
-                //         type: "spring",
-                //         duration: 1,
-                //         ease: "easeInOut",
-                //         bounce: 0.1,
-                //     },
-                // }}
                 onClick={() => setIsModalOPen(true)}
             >
                 <img ref={node => dragRef(dropRef(node))} src={skill.icon} alt={skill.title} className="w-12 h-12" />
