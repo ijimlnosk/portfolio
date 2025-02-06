@@ -67,7 +67,7 @@ const mockUserInfo = {
     phoneNumber: "010-7669-3414",
     birthday: "1996년 03월 26일",
     university: "대림대학교",
-    major: "컴퓨터 소프트웨어 학과",
+    major: "컴퓨터 소프트웨어과",
     developerValues: [
         {
             title: "지속적인 학습",
@@ -96,6 +96,58 @@ const mockUserInfo = {
     ],
     skills: ["JavaScript", "TypeScript", "React", "ReactNative", "Next.js", "Kotlin", "swift"],
     tools: ["", "", "", "", ""],
+    studyTimeLine: [
+        {
+            title: "TapPerp",
+            link: "https://github.com/ThugDev/TapPrep",
+            icon: "https://github.com/user-attachments/assets/578302e4-25d8-4d0c-92ed-edd3a6568080",
+        },
+        {
+            title: "PurrTunseMobile",
+            link: "https://github.com/ThugDev/PurrTunesMobile",
+            icon: "https://github.com/user-attachments/assets/587b8a78-17e0-4c9a-adca-fe747a77d336",
+        },
+        {
+            title: "모여봐요, 면접의 숲",
+            link: "https://github.com/interview-crossing",
+            icon: "https://github.com/user-attachments/assets/e5f4f9af-8fdb-4700-8eb5-a5e763213606",
+        },
+        {
+            title: "Mobi Community",
+            link: "https://github.com/mobi-community",
+            icon: "https://github.com/user-attachments/assets/0b2180b9-710e-40fa-9ded-3c78e95c9d4c",
+        },
+        {
+            title: "PR-Dliver",
+            link: "https://github.com/ThugDev/PR-Deliver",
+            icon: "https://github.com/user-attachments/assets/1279eb79-f99e-48f8-b02b-fd303ffade86",
+        },
+        {
+            title: "여행을 기록하다, 여기",
+            link: "https://github.com/mobi-projects/yeogi-client",
+            icon: "https://github.com/user-attachments/assets/4cbd91a8-f86d-4a47-8d1e-3f6108a48bd8",
+        },
+        {
+            title: "Mobi",
+            link: "",
+            icon: "https://github.com/user-attachments/assets/0b2180b9-710e-40fa-9ded-3c78e95c9d4c",
+        },
+        {
+            title: "P.E.A",
+            link: "https://github.com/PurpleDynamics/PEA_Project",
+            icon: "https://github.com/user-attachments/assets/477e679f-445e-4930-9edf-5d94e7e00416",
+        },
+        {
+            title: "Korea IT",
+            link: "",
+            icon: "https://github.com/user-attachments/assets/0b2180b9-710e-40fa-9ded-3c78e95c9d4c",
+        },
+        {
+            title: "졸업 과제 : 가계부 어플",
+            link: "https://github.com/ijimlnosk/capstone22",
+            icon: "https://github.com/user-attachments/assets/0b2180b9-710e-40fa-9ded-3c78e95c9d4c",
+        },
+    ],
 }
 
 export const handlers = [

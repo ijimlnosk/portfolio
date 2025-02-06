@@ -6,7 +6,7 @@ import SideMenu from "./sideMenu/sideMenu"
 
 const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingModalProps) => {
     const [isMinimized, setIsMinimized] = useState(false)
-    const [isSelectedMenuIndex, setIsSelectedMenuIndex] = useState(false)
+    const [isSelectedMenuIndex, setIsSelectedMenuIndex] = useState(true)
     const minimizedArea = document.getElementById("minimized-area")
     const container = isMinimized && minimizedArea ? minimizedArea : document.body
 
@@ -31,7 +31,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingMo
             >
                 <div
                     ref={dragRef}
-                    className=" w-[980px] h-[820px] absolute flex flex-row bg-white shadow-lg rounded-lg pointer-events-auto"
+                    className=" w-[980px] h-[880px] absolute flex flex-row bg-white shadow-lg rounded-lg pointer-events-auto"
                 >
                     <SideMenu
                         userInfo={userInfo}

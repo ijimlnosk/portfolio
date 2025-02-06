@@ -8,6 +8,11 @@ export type MoreInfo = {
     description: string
     icon: string
 }
+export type StudyTimeLine = {
+    title: string
+    link: string
+    icon: string
+}
 
 export type getUserInfoResponse = {
     userName: string
@@ -22,4 +27,5 @@ export type getUserInfoResponse = {
     moreInfo: MoreInfo[]
     skills: string[]
     tools: string[]
+    studyTimeLine: StudyTimeLine[]
 }

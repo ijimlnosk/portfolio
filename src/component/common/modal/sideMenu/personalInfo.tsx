@@ -1,9 +1,5 @@
-import { getUserInfoResponse } from "../../../../api/type"
 import InfoItem from "./infoItem"
-
-export type PersonalInfoProps = {
-    userInfo: getUserInfoResponse
-}
+import { PersonalInfoProps } from "./type"
 
 const PersonalInfo = ({ userInfo }: PersonalInfoProps) => {
     return (
