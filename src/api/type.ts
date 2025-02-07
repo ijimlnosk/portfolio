@@ -7,6 +7,7 @@ export type MoreInfo = {
     nickName: string
     description: string
     icon: string
+    link: string
 }
 export type StudyTimeLine = {
     title: string

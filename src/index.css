@@ -27,3 +27,77 @@ body {
         display: none; /* chrome, safari, opera, edge */
     }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* fonts */
+.font-myeongjo {
+    font-family: "Nanum Myeongjo", serif;
+}
+.font-pretendard {
+    font-family: "Pretendard", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    color: #000;
+    background-color: #f0f0f0;
+
+    /* prevent Drag */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-use-select: none;
+    user-select: none;
+
+    /* invisible scroll */
+    ::-webkit-scrollbar {
+        display: none; /* chrome, safari, opera, edge */
+    }
+}
+
+.chevron {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.chevron::before,
+.chevron::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #d0d0d0;
+    border-radius: 2px;
+}
+
+.chevron-right::before {
+    transform: rotate(45deg);
+    top: 4px;
+    left: 2px;
+}
+
+.chevron-right::after {
+    transform: rotate(-45deg);
+    bottom: 4px;
+    left: 2px;
+}
+
+.chevron-left::before {
+    transform: rotate(-45deg);
+    top: 4px;
+    right: 2px;
+}
+
+.chevron-left::after {
+    transform: rotate(45deg);
+    bottom: 4px;
+    right: 2px;
+}
+
+
+
