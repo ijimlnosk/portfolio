@@ -26,6 +26,6 @@ export type FolerIconComponentProps = {
         x: number
         y: number
     }
-    setPosition: (position: { x: number; y: number }) => void
+    // setPosition: (position: { x: number; y: number }) => void
     name: string
 }

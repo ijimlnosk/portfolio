@@ -29,7 +29,7 @@ const Home = () => {
 
     const [, drop] = useDrop(() => ({
         accept: ITEM_TYPE,
-        drop: (item, monitor) => {
+        drop: (_, monitor) => {
             const delta = monitor.getDifferenceFromInitialOffset()
             if (!delta) return
 
@@ -46,7 +46,7 @@ const Home = () => {
                 ref={drop}
                 className="w-[100vw] h-[calc(100vh-50px)] flex relative justify-center items-center bg-[url('/assets/image/Silver_iMac_M4_wallpaper_1.svg')] bg-cover bg-center"
             >
-                <FolderIconComponent position={position} setPosition={setPosition} name="mobi" />
+                <FolderIconComponent position={position} name="mobi" />
                 <SkillMenu />
             </div>
         </>
