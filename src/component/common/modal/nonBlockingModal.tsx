@@ -17,7 +17,9 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingMo
     return ReactDOM.createPortal(
         isMinimized ? (
             <div className="flex items-center cursor-pointer" onClick={() => setIsMinimized(false)}>
-                최소화 됨
+                <div className="w-12 h-12 bg-white rounded-lg shadow-sm">
+                    <div className="w-[30%] h-12 bg-[#e2e2e2] rounded-l-lg shadow-md"></div>
+                </div>
             </div>
         ) : (
             <div

@@ -13,7 +13,7 @@ const StudyTimeLine = ({ userInfo }: StudyTimeLineProps) => {
             </div>
             <div className="w-full max-h-80 overflow-y-auto">
                 {userInfo.studyTimeLine.map((item, index) => (
-                    <div key={index} className="w-full my-2">
+                    <div key={index} className="w-full h-8 my-2">
                         <a
                             href={item.link}
                             target="_blank"
