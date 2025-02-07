@@ -10,7 +10,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingMo
     const minimizedArea = document.getElementById("minimized-area")
     const container = isMinimized && minimizedArea ? minimizedArea : document.body
 
-    const { position, isDragging, dragRef, dropRef } = useDraggable({ x: 580, y: 60 })
+    const { position, isDragging, dragRef, dropRef } = useDraggable({ x: 500, y: 60 })
 
     if (!isOpen) return null
 
