@@ -27,7 +27,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingMo
                 className=" w-full fixed inset-0 z-50 bg-transparent pointer-events-none"
                 style={{
                     left: position.x,
-                    top: position.y,
+                    top: Math.max(position.y, 50),
                     opacity: isDragging ? "0" : "1",
                 }}
             >
