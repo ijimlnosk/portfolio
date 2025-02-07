@@ -20,8 +20,8 @@ const SkillMenu = () => {
     }
 
     return (
-        <div className="fixed bottom-2">
-            <div className="flex bg-[#eaeefa] bg-opacity-80 p-1 rounded-2xl shadow-md">
+        <div className="fixed bottom-2 z-[999] backdrop-blur-sm">
+            <div className="flex bg-[#eaeefa] bg-opacity-50 p-1 rounded-2xl shadow-md">
                 {skills.map((skill, index) => (
                     <div key={skill.id} className="flex items-center">
                         <SkillIcon key={skill.id} skill={skill} index={index} moveSkill={moveSkill} />

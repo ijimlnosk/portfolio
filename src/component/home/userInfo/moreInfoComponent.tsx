@@ -6,8 +6,8 @@ export type MoreInfoComponentProps = {
 
 const MoreInfoComponent = ({ moreInfos }: MoreInfoComponentProps) => {
     return (
-        <div className="py-4 ">
-            <p className="text-lg mb-2">more infomation</p>
+        <div className="py-4">
+            <p className="text-lg mt-4 mb-2">more infomation</p>
             <div className="bg-[#f7f7f7] bg-opacity-90 border border-[#e2e2e2] rounded-lg relative">
                 {moreInfos?.map((item, index) => (
                     <a

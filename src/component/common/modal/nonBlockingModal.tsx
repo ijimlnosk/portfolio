@@ -10,7 +10,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingMo
     const minimizedArea = document.getElementById("minimized-area")
     const container = isMinimized && minimizedArea ? minimizedArea : document.body
 
-    const { position, isDragging, dragRef, dropRef } = useDraggable({ x: 360, y: 60 })
+    const { position, isDragging, dragRef, dropRef } = useDraggable({ x: 350, y: 60 })
 
     if (!isOpen) return null
 
@@ -33,7 +33,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingMo
             >
                 <div
                     ref={dragRef}
-                    className=" w-[780px] h-[680px] absolute flex flex-row bg-white shadow-lg rounded-lg pointer-events-auto"
+                    className=" h-[84vh] w-[820px] absolute flex flex-row shadow-lg rounded-lg  pointer-events-auto"
                 >
                     <SideMenu
                         userInfo={userInfo}

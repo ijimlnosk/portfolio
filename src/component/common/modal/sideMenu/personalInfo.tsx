@@ -5,7 +5,7 @@ const PersonalInfo = ({ userInfo }: PersonalInfoProps) => {
     return (
         <div className="mt-4">
             <h2 className="mb-4 text-md">Personal Information</h2>
-            <div className="space-y-2">
+            <div className="">
                 <InfoItem icon="/assets/icon/PhoneIcon.svg" alt="Phone">
                     {userInfo.phoneNumber}
                 </InfoItem>
@@ -14,8 +14,8 @@ const PersonalInfo = ({ userInfo }: PersonalInfoProps) => {
                 </InfoItem>
                 <InfoItem icon="/assets/icon/UniversityIcon.svg" alt="University">
                     <div className="flex flex-row gap-1">
-                        <span className="text-[10px]">{userInfo.university}</span>
-                        <span className="text-[10px]">{userInfo.major}</span>
+                        <span>{userInfo.university}</span>
+                        <span>{userInfo.major}</span>
                     </div>
                 </InfoItem>
                 <InfoItem icon="/assets/icon/SkillToolIcon.svg" alt="Skills and Tools">
