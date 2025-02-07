@@ -11,7 +11,7 @@ const StudyTimeLine = ({ userInfo }: StudyTimeLineProps) => {
                 <p>Study TimeLine</p>
                 <p className="text-[8px]">프로젝트의 아이콘을 클릭 시 해당 레포지토리로 이동 가능</p>
             </div>
-            <div className="w-full max-h-64 overflow-y-auto">
+            <div className="w-full max-h-44 overflow-y-auto">
                 {userInfo.studyTimeLine.map((item, index) => (
                     <div key={index} className="w-full h-6 my-[6px]">
                         <a

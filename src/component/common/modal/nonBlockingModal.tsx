@@ -33,7 +33,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingMo
             >
                 <div
                     ref={dragRef}
-                    className=" w-[780px] h-[780px] absolute flex flex-row bg-white shadow-lg rounded-lg pointer-events-auto"
+                    className=" w-[780px] h-[680px] absolute flex flex-row bg-white shadow-lg rounded-lg pointer-events-auto"
                 >
                     <SideMenu
                         userInfo={userInfo}
