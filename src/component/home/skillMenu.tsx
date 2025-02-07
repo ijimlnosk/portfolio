@@ -25,7 +25,7 @@ const SkillMenu = () => {
                 {skills.map((skill, index) => (
                     <div key={skill.id} className="flex items-center">
                         <SkillIcon key={skill.id} skill={skill} index={index} moveSkill={moveSkill} />
-                        {dividerIndices.includes(index + 1) && <div className=" mx-2 w-[1px] h-12  bg-[#818FAF]" />}
+                        {dividerIndices.includes(index + 1) && <div className=" mx-2 w-[1px] h-10  bg-[#818FAF]" />}
                     </div>
                 ))}
                 <div id="minimized-area" className="mx-4 flex items-center" />

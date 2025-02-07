@@ -11,10 +11,10 @@ const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
     return (
         <>
             <div
-                className={` group relative p-2 m-1 rounded-lg cursor-pointer transition ${isDragging ? "opacity-0" : "opacity-100"}`}
+                className={` group relative p-1.5 m-1 rounded-lg cursor-pointer transition ${isDragging ? "opacity-0" : "opacity-100"}`}
                 onClick={openModal}
             >
-                <img ref={dragDropRef} src={skill.icon} alt={skill.title} className="w-12 h-12" />
+                <img ref={dragDropRef} src={skill.icon} alt={skill.title} className="w-10 h-10" />
                 <SkillTitleView skillTitle={skill.title} />
             </div>
             <NonBlockingModal isOpen={isModalOpen} onClose={closeModal} userInfo={data}>

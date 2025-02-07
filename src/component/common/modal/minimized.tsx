@@ -10,7 +10,7 @@ const Minimized = ({ isMinimized, setIsMinimized }: MinimizedProps) => {
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
                 onClick={() => setIsMinimized(!isMinimized)}
-                className={`bg-[#FEBC2E] w-[15px] h-[15px] rounded-full flex justify-center items-center `}
+                className={`bg-[#FEBC2E] w-3 h-3 rounded-full flex justify-center items-center `}
             >
                 {isHover ? <div className="w-2 border border-black" /> : ""}
             </button>

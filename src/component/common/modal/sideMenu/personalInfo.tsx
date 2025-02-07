@@ -3,8 +3,8 @@ import { PersonalInfoProps } from "./type"
 
 const PersonalInfo = ({ userInfo }: PersonalInfoProps) => {
     return (
-        <div className="mt-6">
-            <h2 className="mb-6 text-lg">Personal Information</h2>
+        <div className="mt-4">
+            <h2 className="mb-4 text-md">Personal Information</h2>
             <div className="space-y-2">
                 <InfoItem icon="/assets/icon/PhoneIcon.svg" alt="Phone">
                     {userInfo.phoneNumber}

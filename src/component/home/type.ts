@@ -20,3 +20,12 @@ export type SkillIconProps = {
 export type SkillTitleViewProps = {
     skillTitle: string
 }
+
+export type FolerIconComponentProps = {
+    position: {
+        x: number
+        y: number
+    }
+    setPosition: (position: { x: number; y: number }) => void
+    name: string
+}

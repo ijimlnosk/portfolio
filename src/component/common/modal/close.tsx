@@ -10,7 +10,7 @@ const Close = ({ onClose }: CloseProps) => {
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
                 onClick={onClose}
-                className={`bg-[#FF5F57] w-[15px] h-[15px] rounded-full flex justify-center items-center `}
+                className={`bg-[#FF5F57] w-3 h-3 text-sm rounded-full flex justify-center items-center `}
             >
                 {isHover ? "x" : ""}
             </button>

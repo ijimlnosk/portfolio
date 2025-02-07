@@ -22,7 +22,7 @@ const SideMenu = ({
             <div className="flex flex-row gap-2 px-2 pt-2 pb-6">
                 <Close onClose={onClose} />
                 <Minimized isMinimized={isMinimized} setIsMinimized={setIsMinimized} />
-                <div className="w-[15px] h-[15px] bg-green-500 rounded-full" />
+                <div className="w-3 h-3 bg-green-500 rounded-full" />
             </div>
             <div className="rounded-lg w-full h-7 bg-[#d5d5d5] " />
             <UserProfile userInfo={userInfo} isSelected={isSelected} setIsSelected={setIsSelected} />

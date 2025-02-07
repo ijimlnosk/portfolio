@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <div className="w-full h-[50px] bg-[#D4D8E5] flex flex-row justify-between items-center">
+        <div className="w-[100vw] h-[50px] bg-[#D4D8E5] flex flex-row justify-between items-center">
             <div className="flex flex-row items-center ml-8">
                 <img src="/assets/image/solImage.svg" alt="sol image" className="w-[50px] h-[50px]" />
                 <p className=" font-bold text-2xl">Kim JinSol</p>
