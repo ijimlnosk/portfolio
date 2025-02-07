@@ -3,7 +3,7 @@ import { FolerIconComponentProps } from "./type"
 
 const ITEM_TYPE = "FOLDER_ICON"
 
-const FolderIconComponent = ({ position, setPosition, name }: FolerIconComponentProps) => {
+const FolderIconComponent = ({ position, name }: FolerIconComponentProps) => {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: ITEM_TYPE,
         item: { position },
