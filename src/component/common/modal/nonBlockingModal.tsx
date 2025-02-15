@@ -3,10 +3,12 @@ import ReactDOM from "react-dom"
 import { NonBlockingModalProps } from "./type"
 import { useDraggable } from "../../../hooks/useDraggable"
 import SideMenu from "./sideMenu/sideMenu"
+import { useSelectedViewStore } from "../../../lib/zustand/selectedViewStore"
 
 const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingModalProps) => {
     const [isMinimized, setIsMinimized] = useState(false)
-    const [isSelectedMenuIndex, setIsSelectedMenuIndex] = useState(true)
+    // const [selectedView, setSelectedView] = useState<"userInfo" | "skillsAndTools">("userInfo")
+    const { selectedView, setSelectedView } = useSelectedViewStore()
     const minimizedArea = document.getElementById("minimized-area")
     const container = isMinimized && minimizedArea ? minimizedArea : document.body
 
@@ -40,10 +42,10 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingMo
                         onClose={onClose}
                         isMinimized={isMinimized}
                         setIsMinimized={setIsMinimized}
-                        isSelected={isSelectedMenuIndex}
-                        setIsSelected={setIsSelectedMenuIndex}
+                        selectedView={selectedView}
+                        setSelectedView={setSelectedView}
                     />
-                    <div>{children}</div>
+                    <div className="flex-1">{children}</div>
                 </div>
             </div>
         ),

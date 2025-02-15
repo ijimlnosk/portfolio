@@ -10,8 +10,8 @@ const SideMenu = ({
     onClose,
     isMinimized,
     setIsMinimized,
-    isSelected,
-    setIsSelected,
+    selectedView,
+    setSelectedView,
 }: SettingSideMenuProps) => {
     if (!userInfo) {
         return null
@@ -27,8 +27,8 @@ const SideMenu = ({
 
             <div className="rounded-lg w-full h-7 bg-[#d5d5d5] " />
             <div className="h-[580px] 2xl:h-[680px] overflow-y-auto">
-                <UserProfile userInfo={userInfo} isSelected={isSelected} setIsSelected={setIsSelected} />
-                <PersonalInfo userInfo={userInfo} />
+                <UserProfile userInfo={userInfo} selectedView={selectedView} setSelectedView={setSelectedView} />
+                <PersonalInfo userInfo={userInfo} selectedView={selectedView} setSelectedView={setSelectedView} />
                 <StudyTimeLine userInfo={userInfo} />
             </div>
         </div>

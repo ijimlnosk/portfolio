@@ -1,7 +1,7 @@
 import InfoItem from "./infoItem"
 import { PersonalInfoProps } from "./type"
 
-const PersonalInfo = ({ userInfo }: PersonalInfoProps) => {
+const PersonalInfo = ({ userInfo, selectedView, setSelectedView }: PersonalInfoProps) => {
     return (
         <div className="mt-4">
             <h2 className="mb-4 text-md">Personal Information</h2>
@@ -18,7 +18,12 @@ const PersonalInfo = ({ userInfo }: PersonalInfoProps) => {
                         <span>{userInfo.major}</span>
                     </div>
                 </InfoItem>
-                <InfoItem icon="/assets/icon/SkillToolIcon.svg" alt="Skills and Tools">
+                <InfoItem
+                    selectedView={selectedView}
+                    setSelectedView={setSelectedView}
+                    icon="/assets/icon/SkillToolIcon.svg"
+                    alt="Skills and Tools"
+                >
                     SkillsAndTools
                 </InfoItem>
             </div>
