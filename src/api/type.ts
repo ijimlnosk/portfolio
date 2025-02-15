@@ -30,3 +30,21 @@ export type getUserInfoResponse = {
     tools: string[]
     studyTimeLine: StudyTimeLine[]
 }
+
+export type getSkillsAndToolsResponse = {
+    Language: SkillsAndToolsItem[]
+    FrameWork: SkillsAndToolsItem[]
+    RunTime: SkillsAndToolsItem[]
+    Deploy: SkillsAndToolsItem[]
+    CollaborationTools: SkillsAndToolsItem[]
+    Library: SkillsAndToolsItem[]
+    StyleSheet: SkillsAndToolsItem[]
+    UIKit: SkillsAndToolsItem[]
+    Networking: SkillsAndToolsItem[]
+}
+
+export type SkillsAndToolsItem = {
+    name: string
+    percent: number
+    bgColor: string
+}

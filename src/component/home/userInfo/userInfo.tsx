@@ -1,15 +1,10 @@
-import { useQuery } from "@tanstack/react-query"
-import { getUserInfo } from "../../../api/user"
 import SettingUserProfile from "./settingUserProfile"
 import DeveloperValues from "./developerValues"
 import MoreInfoComponent from "./moreInfoComponent"
+import { useUserInfo } from "../../../hooks/useUserInfo"
 
 const UserInfo = () => {
-    const { data, isLoading, isError } = useQuery({
-        queryKey: ["userData"],
-        queryFn: getUserInfo,
-    })
-
+    const { data, isLoading, isError } = useUserInfo()
     if (isLoading) {
         return <div>Loading...</div>
     }
