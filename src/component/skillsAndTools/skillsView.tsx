@@ -1,3 +1,4 @@
+import SkillDescription from "./skillDescription"
 import { SkillsViewProps } from "./type"
 
 const SkillsView = ({ data, layout = "vertical" }: SkillsViewProps) => {
@@ -10,9 +11,9 @@ const SkillsView = ({ data, layout = "vertical" }: SkillsViewProps) => {
                 const skills = data[category]
                 if (!skills) return null
                 return (
-                    <div className="w-full bg-[#f7f7f7] border-[1px] border-[#e2e2e2] rounded-md my-2 p-4 ">
+                    <div className="w-full bg-[#f7f7f7] border-[1px] border-[#e2e2e2] rounded-md my-2 px-4 py-2 ">
                         <div key={category}>
-                            <div className="w-full text-md">{category}</div>
+                            <div className="w-full text-md mb-4">{category}</div>
                             <div className="w-full bg-[#d9d9d9] flex flex-row rounded-md">
                                 {skills.map((skill, index) => (
                                     <div
@@ -25,6 +26,7 @@ const SkillsView = ({ data, layout = "vertical" }: SkillsViewProps) => {
                                     />
                                 ))}
                             </div>
+                            <SkillDescription skills={skills} />
                         </div>
                     </div>
                 )
