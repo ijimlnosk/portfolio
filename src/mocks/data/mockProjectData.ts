@@ -1,4 +1,4 @@
-import { ProjectMainItem } from "../../component/project/type"
+import { ProjectMainItem } from "./type"
 
 export const mockProjects: ProjectMainItem[] = [
     {
@@ -222,14 +222,13 @@ export const mockProjects: ProjectMainItem[] = [
                 {
                     name: "GITHUB",
                     text: "프로젝트 레포지토리",
-                    link: "https://github.com/mobi-projects/yeogi-client",
-                    image: "",
+                    link: "https://github.com/ThugDev/PR-Deliver",
+                    image: "https://github.com/user-attachments/assets/57eb5e30-92dd-4605-8126-21035d1c574d",
                 },
-                { name: "VERCEL", text: "배포된 웹 페이지", link: "https://yeogi-client.vercel.app/", image: "" },
                 {
                     name: "FIGMA",
                     text: "프로젝트 화면 디자인",
-                    link: "https://www.figma.com/design/TQX56AWMGdAT5DYDpmWKBk/YeoGi?node-id=0-1&t=swrAnTlUQLb9xo3O-1",
+                    link: "https://www.figma.com/design/zBv18pZAnySUtNNVkK1AyA/PR-deliver?node-id=546-79&t=WxLDsPhO061qEdFO-1",
                     image: "",
                 },
             ],

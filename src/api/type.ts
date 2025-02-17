@@ -1,3 +1,5 @@
+import { ProjectSideItem } from "../mocks/data/type"
+
 export type DeveloperValue = {
     title: string
     description: string
@@ -47,4 +49,19 @@ export type SkillsAndToolsItem = {
     name: string
     percent: number
     bgColor: string
+}
+
+export type GetProjectResponse = () => {
+    id: number
+    title: string
+    subTitle: string
+    thumbNail: string
+    range: string
+    deploy?: string
+    additionalRange?: string
+    oneLineIntroduction: string
+    image: string[]
+    firstDescription: string
+    secondDescription: string
+    projectSideMenu: ProjectSideItem
 }
