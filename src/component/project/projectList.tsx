@@ -19,13 +19,7 @@ const ProjectList = () => {
 
     return (
         <div className="w-full h-screen overflow-x-auto">
-            <div className=" w-full h-full inline-flex space-x-4 pl-[20%]">
-                {projects.map((item, index) => (
-                    <div key={index} className=" w-full h-full flex-none ">
-                        <ProjectCard item={item} />
-                    </div>
-                ))}
-            </div>
+            <div className=" w-full h-full inline-flex space-x-4 pl-[20%]"></div>
         </div>
     )
 }
