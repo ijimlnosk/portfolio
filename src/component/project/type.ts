@@ -1,18 +1,34 @@
 export type ProjectCardProps = {
-    item: ProjectItem
+    item: ProjectMainItem
 }
 
-export type ProjectItem = {
+export type ProjectMainItem = {
     id: number
     title: string
     subTitle: string
-    thumbnail: string
-    content: string
-    period: string
-    skill: string[]
-    library: string[]
-    link: ProjectLink[]
-    distributeLink: string
+    thumbNail: string
+    range: string
+    deploy?: string
+    additionalRange?: string
+    oneLineIntroduction: string
+    image: string[]
+    firstDescription: string
+    secondDescription: string
+    projectSideMenu: ProjectSideItem
+}
+
+export type ProjectSideItem = {
+    projectInfomation: {
+        name: string
+        text: string
+        link?: string
+        image: string
+    }[]
+    used: {
+        title: string
+        name: string
+        image: string
+    }[]
 }
 
 export type ProjectLink = {

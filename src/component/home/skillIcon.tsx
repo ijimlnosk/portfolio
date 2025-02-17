@@ -6,7 +6,7 @@ import { useSkillModal } from "../../hooks/useSkillModal"
 
 const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
     const { isDragging, dragDropRef } = useDragAndDropSkill({ index, moveSkill, skill })
-    const { isModalOpen, openModal, closeModal, data, isLoading, isError, content } = useSkillModal(skill)
+    const { isModalOpen, openModal, closeModal, data, isLoading, isError, content, skillTitle } = useSkillModal(skill)
 
     return (
         <>
@@ -17,7 +17,7 @@ const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
                 <img ref={dragDropRef} src={skill.icon} alt={skill.title} className="w-10 h-10" />
                 <SkillTitleView skillTitle={skill.title} />
             </div>
-            <NonBlockingModal isOpen={isModalOpen} onClose={closeModal} userInfo={data}>
+            <NonBlockingModal isOpen={isModalOpen} onClose={closeModal} userInfo={data} skillTitle={skillTitle}>
                 {content}
                 {isLoading && <div>Loading...</div>}
                 {isError && <div>유저 데이터를 불러오는데 실패했습니다.</div>}

@@ -1,14 +1,14 @@
 import ProjectCard from "./projectCard"
 import { useQuery } from "@tanstack/react-query"
-import { ProjectItem } from "./type"
 import { getProject } from "../../api/project"
+import { ProjectMainItem } from "./type"
 
 const ProjectList = () => {
     const {
         data: projects,
         isLoading,
         error,
-    } = useQuery<ProjectItem[], Error>({
+    } = useQuery<ProjectMainItem[], Error>({
         queryKey: ["projects"],
         queryFn: getProject,
     })

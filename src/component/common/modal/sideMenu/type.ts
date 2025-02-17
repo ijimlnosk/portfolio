@@ -13,6 +13,7 @@ export type SettingSideMenuProps = {
     setIsMinimized: (isMinimized: boolean) => void
     selectedView: "userInfo" | "skillsAndTools"
     setSelectedView: (selectedView: "userInfo" | "skillsAndTools") => void
+    skillTitle: string
 }
 
 export type PersonalInfoProps = {
@@ -27,4 +28,10 @@ export type InfoItemProps = {
     children: React.ReactNode
     selectedView?: "userInfo" | "skillsAndTools"
     setSelectedView?: (selectedView: "userInfo" | "skillsAndTools") => void
+}
+
+export type UserInfoSideMenuProps = {
+    userInfo: getUserInfoResponse
+    selectedView: "userInfo" | "skillsAndTools"
+    setSelectedView: (selectedView: "userInfo" | "skillsAndTools") => void
 }

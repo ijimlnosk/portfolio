@@ -5,9 +5,8 @@ import { useDraggable } from "../../../hooks/useDraggable"
 import SideMenu from "./sideMenu/sideMenu"
 import { useSelectedViewStore } from "../../../lib/zustand/selectedViewStore"
 
-const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingModalProps) => {
+const NonBlockingModal = ({ isOpen, onClose, children, userInfo, skillTitle }: NonBlockingModalProps) => {
     const [isMinimized, setIsMinimized] = useState(false)
-    // const [selectedView, setSelectedView] = useState<"userInfo" | "skillsAndTools">("userInfo")
     const { selectedView, setSelectedView } = useSelectedViewStore()
     const minimizedArea = document.getElementById("minimized-area")
     const container = isMinimized && minimizedArea ? minimizedArea : document.body
@@ -35,7 +34,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingMo
             >
                 <div
                     ref={dragRef}
-                    className=" h-[84vh] w-[820px] absolute flex flex-row shadow-lg rounded-lg  pointer-events-auto"
+                    className={`h-[84vh] ${skillTitle === "Project" ? "w-[1280px]" : "w-[820px]"} absolute flex flex-row shadow-lg rounded-lg  pointer-events-auto`}
                 >
                     <SideMenu
                         userInfo={userInfo}
@@ -44,6 +43,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo }: NonBlockingMo
                         setIsMinimized={setIsMinimized}
                         selectedView={selectedView}
                         setSelectedView={setSelectedView}
+                        skillTitle={skillTitle}
                     />
                     <div className="flex-1">{children}</div>
                 </div>

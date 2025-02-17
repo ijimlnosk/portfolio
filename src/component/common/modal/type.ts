@@ -5,6 +5,7 @@ export type NonBlockingModalProps = {
     onClose: () => void
     children: React.ReactNode
     userInfo?: getUserInfoResponse
+    skillTitle: string
 }
 
 export type MinimizedProps = {
