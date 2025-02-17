@@ -1,4 +1,3 @@
-import ProjectCard from "./projectCard"
 import { useQuery } from "@tanstack/react-query"
 import { getProject } from "../../api/project"
 import { ProjectMainItem } from "./type"
