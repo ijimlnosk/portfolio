@@ -34,7 +34,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo, skillTitle }: N
             >
                 <div
                     ref={dragRef}
-                    className={`h-[84vh] ${skillTitle === "Project" ? "w-[1280px]" : "w-[820px]"} absolute flex flex-row shadow-lg rounded-lg  pointer-events-auto`}
+                    className={`h-[84vh] ${skillTitle === "Project" ? "w-[1520px]" : "w-[820px]"} absolute flex flex-row shadow-lg rounded-lg  pointer-events-auto`}
                 >
                     <SideMenu
                         userInfo={userInfo}

@@ -28,21 +28,27 @@ body {
     }
 }
 
+.chevron::before,
+.chevron::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: var(--chevron-color, #d0d0d0); /* 기본값은 #d0d0d0 */
+  border-radius: 2px;
+}
+
+/* 호버 시 강제로 검정색으로 변경 */
+.chevron:hover::before,
+.chevron:hover::after {
+  background-color: #888 !important;
+}
+
 .chevron {
     position: relative;
     display: inline-block;
     width: 12px;
     height: 12px;
-}
-
-.chevron::before,
-.chevron::after {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 2px;
-    background-color: #d0d0d0;
-    border-radius: 2px;
 }
 
 .chevron-right::before {

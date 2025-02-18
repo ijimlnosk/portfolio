@@ -51,7 +51,7 @@ export type SkillsAndToolsItem = {
     bgColor: string
 }
 
-export type GetProjectResponse = () => {
+export type GetProjectResponse = {
     id: number
     title: string
     subTitle: string

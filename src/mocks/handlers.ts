@@ -1,6 +1,6 @@
 import { http, HttpResponse } from "msw"
 import { mockUserInfo } from "./data/mockUserInfo"
-import { mockProjects } from "./data/mockProjectData"
+import { mockProjects, mockToyProject } from "./data/mockProjectData"
 import { mockSkillsAndToolsData } from "./data/mockSkillAndToolsData"
 
 export const handlers = [
@@ -19,6 +19,10 @@ export const handlers = [
                 status: 404,
             })
         }
+    }),
+
+    http.get(`/api/toyProject`, () => {
+        return HttpResponse.json(mockToyProject)
     }),
 
     // user info data

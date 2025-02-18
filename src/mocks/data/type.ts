@@ -18,13 +18,13 @@ export type ProjectMainItem = {
 }
 
 export type ProjectSideItem = {
-    projectInfomation: {
+    projectInfomation?: {
         name: string
         text: string
         link?: string
         image: string
     }[]
-    used: {
+    used?: {
         title: string
         name: string
         image: string

@@ -6,7 +6,7 @@ export const mockProjects: ProjectMainItem[] = [
         title: "TAPPREP",
         subTitle: "",
         thumbNail: "",
-        range: "2024.01.13 - onProgress",
+        range: "2025.01.13 - onProgress",
         oneLineIntroduction: "어디서든 바로 공부할 수 있도록 한 기술 면접 개념 문제풀이 앱입니다.",
         image: ["", "", ""],
         firstDescription: ``,
@@ -36,33 +36,34 @@ export const mockProjects: ProjectMainItem[] = [
     {
         id: 2,
         title: "YEOGI",
-        subTitle: "여행을 기록하다, 여기",
+        subTitle: "여행을 기록하다,여기",
         thumbNail: "https://github.com/user-attachments/assets/a0eb6c8c-8719-4555-befc-c9484b0c763e",
         range: "2024.05.25 - 2024.07.21",
         deploy: "2024.07.22 - 2024.07.31",
         additionalRange: "2024.08.01 - on progress",
         oneLineIntroduction:
-            "Yeogi(여기)는 여행을 즐기는 사람들이 자신들의 여행 추억을 게시글로 남기며 여행지에 대한 정보를 공유하는 사이트입니다.",
+            "<p>Yeogi(여기)는 여행을 즐기는 사람들이 자신들의 <strong class=text-[#091673]>여행 추억</strong>을 게시글로 남기며 <span class=text-[#091673]>여행지에 대한 정보를 공유</span>하는 사이트입니다.</p>",
         image: [
-            "https://github.com/user-attachments/assets/fb98ec52-f5bd-4278-b4a9-9d50ce515071",
-            "https://github.com/user-attachments/assets/636e54b5-267a-4f5e-a895-bf0242a3aa07",
             "https://github.com/user-attachments/assets/fc334916-b602-4a48-9507-5cc05e925c1d",
+            "https://github.com/user-attachments/assets/636e54b5-267a-4f5e-a895-bf0242a3aa07",
+            "https://github.com/user-attachments/assets/fb98ec52-f5bd-4278-b4a9-9d50ce515071",
         ],
-        firstDescription: `게시글 상세 페이지의 경우, 많은 내용의 텍스트와 이미지로 인해 로딩에 오래 걸렸습니다. 
-        suspense로 처리했던 부분을 SSR query fetching방식으로 변경해 시간을 단축 시켰습니다.
-        SEO 최적화 및 공유된 게시글의 최적화를 위해 dynamic meta-data를 적용했습니다.
-        layout shift 현상을 skeleton UI로 해결하고 고화질 이미지의 확장자를 svg에서 webp로 변경해 lighthouseDML performance 점수를 40점대에서 75점으로 올렸습니다.
-        검색창에서 발생하는 불필요한 리렌더링을 줄이기 위해 debounce를 적용했습니다.`,
-        secondDescription: `프론트와 백의 원활한 소통을 주도했으며 전체 책임자 역할을 맡았습니다.
-        프론트 전반의 코드 오류를 해결하는데 결정적인 역할을 했으며,
-        주요하면서 가자 어려웠던기능 중 하나인 <내 지도 꾸미기>를 도맡아 진행했습니다.`,
+        firstDescription: `<p>게시글 상세 페이지의 경우, 많은 내용의 텍스트와 이미지로 인해 로딩에 오래 걸렸습니다.</p>
+            <p><strong class="text-[#091673]">suspense</strong>로 처리했던 부분을 <u><strong class="text-[#091673]">SSR query fetching</strong> 방식으로 변경</u>해 <strong class="text-[#091673]">시간을 단축</strong>시켰습니다.</p><br/>
+            <p>SEO 최적화 및 공유된 게시글의 최적화를 위해 <strong class="text-[#091673]">dynamic meta-data</strong>를 적용했습니다.</p><br/>
+            <p>layout shift 현상을 skeleton UI로 해결하고 고화질 이미지의 확장자를 svg에서 webp로 변경해 lighthouseDML performance 점수를 <u><strong class="text-[#091673]">40점대에서 75점으로</strong></u> 올렸습니다.</p><br/>
+            <p>검색창에서 발생하는 <strong class="text-[#091673]">불필요한 리렌더링</strong>을 줄이기 위해 <strong class="text-[#091673]">debounce</strong>를 적용했습니다.</p>`,
+        secondDescription: `<p><strong class="text-[#091673]">프론트와 백의 원활한 소통을 주도</strong>했으며 <strong class="text-[#091673]">전체 책임자 역할</strong>을 맡았습니다.</p><br/>
+            <p>프론트 전반의 코드 오류를 해결하는데 결정적인 역할을 했으며,</p>
+            <p>주요하면서 가장 어려웠던 기능 중 하나인 <strong class="text-[#091673]">&lt;내 지도 꾸미기&gt;</strong>를 도맡아 진행했습니다.</p><br />
+            <p>백엔드 팀은 익숙하지 않은 PR 리뷰의 원활함을 위해, 프론트 팀은 생성된 PR의 빠른 공유를 위해 일부 인원이 모여 <strong class="text-[#091673]">PR 생성 시 바로 팀원에게 메신저를 통해 알림이 가는 서비스</strong>를 만들고 있습니다.</p>`,
         projectSideMenu: {
             projectInfomation: [
                 {
                     name: "GITHUB",
                     text: "프로젝트 레포지토리",
                     link: "https://github.com/mobi-projects/yeogi-client",
-                    image: "https://github.com/user-attachments/assets/a0eb6c8c-8719-4555-befc-c9484b0c763e",
+                    image: "https://github.com/user-attachments/assets/0e47d43e-c90e-4cb1-86e8-5bdb4269ff30",
                 },
                 {
                     name: "VERCEL",
@@ -86,7 +87,7 @@ export const mockProjects: ProjectMainItem[] = [
                     name: "VELOG",
                     text: "프로젝트에 대한 KPT 회고",
                     link: "https://velog.io/@skek298/Yeo-gi-프로젝트-KPT-회고",
-                    image: "https://github.com/user-attachments/assets/3f9db21c-a81b-4811-ae7e-096357abdd5f",
+                    image: "https://github.com/user-attachments/assets/8777d083-9f4f-4ede-8f67-acc1d190367c",
                 },
             ],
             used: [
@@ -132,21 +133,21 @@ export const mockProjects: ProjectMainItem[] = [
         oneLineIntroduction:
             "외부 API와 백엔드 API를 사용해 작업한 첫 토이 프로젝트입니다. 랜덤한 포켓몬스터를 포획할 수 있으며 유저가 잡은 포켓몬 목록을 확인할 수 있습니다.",
         image: [
-            "https://github.com/user-attachments/assets/e3d24369-abc5-44eb-b8b7-6fc365996eb7",
-            "https://github.com/user-attachments/assets/2ecae2ba-5169-4532-aab9-9b9dd65b3002",
             "https://github.com/user-attachments/assets/4f0e0694-0130-4579-b0b1-952c745b05d6",
+            "https://github.com/user-attachments/assets/2ecae2ba-5169-4532-aab9-9b9dd65b3002",
+            "https://github.com/user-attachments/assets/e3d24369-abc5-44eb-b8b7-6fc365996eb7",
         ],
-        firstDescription: `포켓몬스터 API를 사용하는 만큼 디자인에서도 포켓몬스터의 요소를 보여주고자 했습니다.
-        특히 사용자가 처음으로 볼 페이지(로그인/회원가입)에서 인상을 주기 위해  
-        몬스터 볼의 열리는 특징을 활용했습니다.
-        또한  API 작성 및 연결과 같은 백엔드 코드 작성 부분을 담당해 작업했습니다.`,
-        secondDescription: `900개의 데이터를 Promise.all로 가져와 랜덤으로 보여주는 방식으로 인해 
-        로딩 시간이 길어지는 문제가 있었습니다. 이에 따라 불필요한 데이터 로딩 시간을 줄이기 위해 
-        랜덤 ID를 부여한 데이터 수를 정의해 특정 데이터만 가져오는 방식으로 변경하였습니다.
-        결과적으로 로딩 시간을 1/10로 줄임으로써 사용자 경험을 개선시킬 수 있었습니다.
-        제공 되던 백엔드 서버가 종료돼  node.js를 사용하여 백엔드를 재 구현하였습니다.
-        이 과정에서 CORS 에러 해결을 통해 도메인 간 통신의 중요성을 이해하게 되었고, 
-        API를 직접 설계하고 구현하면서 API 구조에 대해 더 알게 되었습니다.`,
+        firstDescription: `<p>포켓몬스터 API를 사용하는 만큼 디자인에서도 포켓몬스터의 요소를 보여주고자 했습니다.<p>
+        <p>특히 사용자가 처음으로 볼 페이지(로그인/회원가입)에서 인상을 주기 위해</p>
+        <p>몬스터 볼의 열리는 특징을 활용했습니다.</p><br/>
+        <p>또한 <strong class="text-[#091673]">API 작성 및 연결</strong>과 같은 백엔드 코드 작성 부분을 담당해 작업했습니다.</p>`,
+        secondDescription: `<p>900개의 데이터를 Promise.all로 가져와 랜덤으로 보여주는 방식으로 인해</p>
+        <p>로딩 시간이 길어지는 문제가 있었습니다. 이에 따라 불필요한 데이터 로딩 시간을 줄이기 위해</p>
+        <p>랜덤 ID를 부여한 데이터 수를 정의해 특정 데이터만 가져오는 방식으로 변경하였습니다.</p>
+        <p>결과적으로 <strong class="text-[#091673]">로딩 시간을 1/10로 줄임</strong>으로써 사용자 경험을 개선시킬 수 있었습니다.</p><br/>
+        <p>제공 되던 백엔드 서버가 종료돼 <strong class="text-[#091673]">node.js를 사용</strong>하여 백엔드를 재 구현하였습니다.</p>
+        <p>이 과정에서 <strong class="text-[#091673]">CORS 에러 해결</strong>을 통해 도메인 간 통신의 중요성을 이해하게 되었고,</p>
+        <p><strong class="text-[#091673]">API를 직접 설계하고 구현</strong>하면서 API 구조에 대해 더 알게 되었습니다.</p>`,
         projectSideMenu: {
             projectInfomation: [
                 {
@@ -207,35 +208,36 @@ export const mockProjects: ProjectMainItem[] = [
             ],
         },
     },
-    {
-        id: 4,
-        title: "PRDeliver",
-        subTitle: "",
-        thumbNail: "",
-        range: "",
-        oneLineIntroduction: "",
-        image: ["https://github.com/user-attachments/assets/2ecd693a-6de8-4d74-a546-0a64ba0a9214"],
-        firstDescription: ``,
-        secondDescription: ``,
-        projectSideMenu: {
-            projectInfomation: [
-                {
-                    name: "GITHUB",
-                    text: "프로젝트 레포지토리",
-                    link: "https://github.com/ThugDev/PR-Deliver",
-                    image: "https://github.com/user-attachments/assets/57eb5e30-92dd-4605-8126-21035d1c574d",
-                },
-                {
-                    name: "FIGMA",
-                    text: "프로젝트 화면 디자인",
-                    link: "https://www.figma.com/design/zBv18pZAnySUtNNVkK1AyA/PR-deliver?node-id=546-79&t=WxLDsPhO061qEdFO-1",
-                    image: "",
-                },
-            ],
-            used: [
-                { title: "Collaboration Tool", name: "Discord + Notion + Kakao", image: "" },
-                { title: "Style Library", name: "Tailwind CSS", image: "" },
-            ],
-        },
-    },
 ]
+
+export const mockToyProject = {
+    id: 1,
+    title: "PRDeliver",
+    subTitle: "",
+    thumbNail: "",
+    range: "",
+    oneLineIntroduction: "",
+    image: ["https://github.com/user-attachments/assets/2ecd693a-6de8-4d74-a546-0a64ba0a9214"],
+    firstDescription: ``,
+    secondDescription: ``,
+    projectSideMenu: {
+        projectInfomation: [
+            {
+                name: "GITHUB",
+                text: "프로젝트 레포지토리",
+                link: "https://github.com/ThugDev/PR-Deliver",
+                image: "https://github.com/user-attachments/assets/57eb5e30-92dd-4605-8126-21035d1c574d",
+            },
+            {
+                name: "FIGMA",
+                text: "프로젝트 화면 디자인",
+                link: "https://www.figma.com/design/zBv18pZAnySUtNNVkK1AyA/PR-deliver?node-id=546-79&t=WxLDsPhO061qEdFO-1",
+                image: "https://github.com/user-attachments/assets/49c74137-f1f8-49b0-bcc2-8d651de2e999",
+            },
+        ],
+        used: [
+            { title: "Collaboration Tool", name: "Discord + Notion + Kakao", image: "" },
+            { title: "Style Library", name: "Tailwind CSS", image: "" },
+        ],
+    },
+}

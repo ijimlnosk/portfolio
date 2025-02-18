@@ -1,6 +1,6 @@
 import Close from "../close"
 import Minimized from "../minimized"
-import ProjectSideMenu from "./projectSideMenu"
+import ProjectSideMenu from "./project/projectSideMenu"
 import { SettingSideMenuProps } from "./type"
 import UserInfoSideMenu from "./userInfoSideMenu"
 
@@ -19,7 +19,7 @@ const SideMenu = ({
 
     return (
         <div
-            className={`${skillTitle === "Project" ? "w-[16%]" : "w-[25%]"} bg-[#e2e2e2] bg-opacity-60 backdrop-blur-md p-2 rounded-l-lg`}
+            className={`${skillTitle === "Project" ? "w-[17%]" : "w-[25%]"} bg-[#e2e2e2] bg-opacity-60 backdrop-blur-md p-2 rounded-l-lg`}
         >
             <div className="flex flex-row gap-2 px-2 pt-2 pb-6">
                 <Close onClose={onClose} />
@@ -31,6 +31,7 @@ const SideMenu = ({
             {skillTitle === "UserInfo" && (
                 <UserInfoSideMenu userInfo={userInfo} selectedView={selectedView} setSelectedView={setSelectedView} />
             )}
+            {/* project의 side menu 내용 */}
             {skillTitle === "Project" && <ProjectSideMenu />}
         </div>
     )
