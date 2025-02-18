@@ -7,7 +7,7 @@ const UserInfoSideMenu = ({ userInfo, selectedView, setSelectedView }: UserInfoS
     return (
         <>
             <div className="rounded-lg w-full h-7 bg-[#d5d5d5] " />
-            <div className="h-[580px] xl:h-[780px] overflow-y-auto">
+            <div className="h-[580px] 2xl:h-[780px] overflow-y-auto">
                 <UserProfile userInfo={userInfo} selectedView={selectedView} setSelectedView={setSelectedView} />
                 <PersonalInfo userInfo={userInfo} selectedView={selectedView} setSelectedView={setSelectedView} />
                 <StudyTimeLine userInfo={userInfo} />

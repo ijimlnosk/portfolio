@@ -2,7 +2,7 @@ import { ProjectSideItem } from "../../../../../mocks/data/type"
 
 const ProjectInfo = ({ projectInfomation }: ProjectSideItem) => {
     return (
-        <div className="w-full h-[300px]  mt-12 flex flex-col">
+        <div className="w-full h-[300px] mt-12 flex flex-col">
             <p className="text-xl mb-1">Project Infomation</p>
             <p className="text-[8px] mb-4">아이콘을 클릭 시 관련 페이지로 이동 가능</p>
             {projectInfomation?.map((item, index) => (
