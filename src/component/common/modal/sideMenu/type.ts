@@ -13,7 +13,8 @@ export type SettingSideMenuProps = {
     setIsMinimized: (isMinimized: boolean) => void
     selectedView: "userInfo" | "skillsAndTools"
     setSelectedView: (selectedView: "userInfo" | "skillsAndTools") => void
-    skillTitle: string
+    skillTitle?: string
+    type?: string
 }
 
 export type PersonalInfoProps = {

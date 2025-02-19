@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import SkillMenu from "../component/home/skillMenu"
 import { useDrop } from "react-dnd"
-import FolderIconComponent from "../component/home/folderIconComponent"
+import FolderIconComponent from "../component/home/folder/folderIconComponent"
 
 const ITEM_TYPE = "FOLDER_ICON"
 

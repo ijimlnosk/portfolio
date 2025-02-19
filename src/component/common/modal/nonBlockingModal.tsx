@@ -5,7 +5,7 @@ import { useDraggable } from "../../../hooks/useDraggable"
 import SideMenu from "./sideMenu/sideMenu"
 import { useSelectedViewStore } from "../../../lib/zustand/selectedViewStore"
 
-const NonBlockingModal = ({ isOpen, onClose, children, userInfo, skillTitle }: NonBlockingModalProps) => {
+const NonBlockingModal = ({ isOpen, onClose, children, userInfo, skillTitle, type }: NonBlockingModalProps) => {
     const [isMinimized, setIsMinimized] = useState(false)
     const { selectedView, setSelectedView } = useSelectedViewStore()
     const minimizedArea = document.getElementById("minimized-area")
@@ -44,6 +44,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo, skillTitle }: N
                         selectedView={selectedView}
                         setSelectedView={setSelectedView}
                         skillTitle={skillTitle}
+                        type={type}
                     />
                     <div className="flex-1">{children}</div>
                 </div>
