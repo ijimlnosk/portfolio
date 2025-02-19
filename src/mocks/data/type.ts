@@ -30,3 +30,14 @@ export type ProjectSideItem = {
         image: string
     }[]
 }
+
+export type MobiItem = {
+    title: string
+    titleLink: string
+    contents: {
+        title: string
+        subTitle: string
+        description: string
+        link: string
+    }[]
+}
