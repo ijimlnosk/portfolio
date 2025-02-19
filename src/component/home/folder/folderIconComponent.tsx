@@ -1,6 +1,6 @@
 import { useDrag } from "react-dnd"
 import { FolerIconComponentProps } from "../type"
-import { Children, useState } from "react"
+import { useState } from "react"
 import NonBlockingModal from "../../common/modal/nonBlockingModal"
 import FolderView from "./folderView"
 
