@@ -2,6 +2,7 @@ import { http, HttpResponse } from "msw"
 import { mockUserInfo } from "./data/mockUserInfo"
 import { mockProjects, mockToyProject } from "./data/mockProjectData"
 import { mockSkillsAndToolsData } from "./data/mockSkillAndToolsData"
+import { mockMobi } from "./data/mockFolderData"
 
 export const handlers = [
     // project data
@@ -33,5 +34,9 @@ export const handlers = [
     //skills and tools data
     http.get("/api/skillsAndTools", () => {
         return HttpResponse.json(mockSkillsAndToolsData)
+    }),
+
+    http.get("/api/mobi", () => {
+        return HttpResponse.json(mockMobi)
     }),
 ]

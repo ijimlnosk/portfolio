@@ -65,3 +65,17 @@ export type GetProjectResponse = {
     secondDescription: string
     projectSideMenu: ProjectSideItem
 }
+
+export type MobiItemResponse = {
+    title: string
+    titleLink: string
+    image: string
+    contents: {
+        title: string
+        subTitle?: string
+        description: string
+        link: string
+        children: boolean
+        childrenTitle?: string
+    }[]
+}

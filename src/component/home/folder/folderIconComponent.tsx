@@ -18,7 +18,6 @@ const FolderIconComponent = ({ position, name }: FolerIconComponentProps) => {
     }))
 
     const handleOpen = () => {
-        console.log("click")
         setIsModalOpen(true)
     }
 

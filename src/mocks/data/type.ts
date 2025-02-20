@@ -34,10 +34,13 @@ export type ProjectSideItem = {
 export type MobiItem = {
     title: string
     titleLink: string
+    image: string
     contents: {
         title: string
-        subTitle: string
+        subTitle?: string
         description: string
         link: string
+        children: boolean
+        childrenTitle?: string
     }[]
 }
