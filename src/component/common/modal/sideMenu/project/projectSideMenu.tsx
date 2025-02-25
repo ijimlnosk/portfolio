@@ -14,7 +14,7 @@ const ProjectSideMenu = () => {
     if (isError) <div>프로젝트 데이터가 없습니다.</div>
 
     return (
-        <div className="h-[600px] 2xl:h-[780px] overflow-y-auto">
+        <div className="h-[600px] 2xl:h-[700px] overflow-y-auto">
             {data && (
                 <div>
                     <div className="rounded-lg w-full h-7 bg-[#d5d5d5] " />
