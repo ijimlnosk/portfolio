@@ -3,33 +3,82 @@ import { ProjectMainItem } from "./type"
 export const mockProjects: ProjectMainItem[] = [
     {
         id: 1,
-        title: "TAPPREP",
-        subTitle: "",
-        thumbNail: "",
+        title: "Tap&Prep",
+        subTitle: "태핑으로 면접 준비하기",
+        thumbNail: "https://github.com/user-attachments/assets/48a8523c-889a-4f47-ad74-b0456779c261",
         range: "2025.01.13 - onProgress",
-        oneLineIntroduction: "어디서든 바로 공부할 수 있도록 한 기술 면접 개념 문제풀이 앱입니다.",
-        image: ["", "", ""],
-        firstDescription: ``,
+        oneLineIntroduction:
+            "화면 탭핑(Tapping)하는 행위를 통해 개발자 면접을 준비(prepare)한다는 의미를 담고 있습니다.",
+        image: [
+            "https://github.com/user-attachments/assets/2ac2e0dc-32b4-4ce1-a4e8-47016d07b539",
+            "https://github.com/user-attachments/assets/fe2e84c1-68c9-447a-82cf-db3573244878",
+            "https://github.com/user-attachments/assets/686ca20a-ef76-4e89-abde-6da4ed822cd7",
+            "https://github.com/user-attachments/assets/f015cad4-e837-4278-aeee-892245776bfd",
+        ],
+        firstDescription: `<p>Tap&Prep은 ReactNative와 React로 개발 진행 중인 기술 면접 개념 문제 풀이 어플입니다.</p>
+<p>화면의 탭(tap) 인터렉션을 통해 사용자가 직관적으로 기술 면접에 출제되는 개념을 문제로 풀어보고, 해설을 확인할 수 있는 환경을 제공합니다.<p/>
+</br>
+<p>React와 React Native를 사용해 다양한 플랫폼에서 최적화된 사용자 경험을 제공할 수 있을거라 생각됩니다.</p>
+<p>화면 탭을 통한 간편한 문제 풀이 방식을 도입하여, 빠르게 문제에 접근하고 학습할 수 있도록 설계했습니다.</p>`,
         secondDescription: ``,
         projectSideMenu: {
             projectInfomation: [
                 {
                     name: "GITHUB",
                     text: "프로젝트 레포지토리",
-                    link: "https://github.com/mobi-projects/yeogi-client",
-                    image: "",
+                    link: "https://github.com/ThugDev/TapPrep-Create-Problem",
+                    image: "https://github.com/user-attachments/assets/48a8523c-889a-4f47-ad74-b0456779c261",
                 },
-                { name: "VERCEL", text: "배포된 웹 페이지", link: "https://yeogi-client.vercel.app/", image: "" },
+                {
+                    name: "App",
+                    text: "배포된 웹 앱 레포지토리",
+                    link: "https://github.com/ThugDev/TapPrep",
+                    image: "https://github.com/user-attachments/assets/f213373e-5b7e-43ba-b24c-2566341371a0",
+                },
+                {
+                    name: "VERCEL",
+                    text: "배포된 웹 페이지",
+                    link: "https://tap-prep.vercel.app/",
+                    image: "https://github.com/user-attachments/assets/875db71f-7713-41cf-9c59-4cd97fc2a816",
+                },
                 {
                     name: "FIGMA",
                     text: "프로젝트 화면 디자인",
-                    link: "https://www.figma.com/design/TQX56AWMGdAT5DYDpmWKBk/YeoGi?node-id=0-1&t=swrAnTlUQLb9xo3O-1",
-                    image: "",
+                    link: "https://www.figma.com/design/iSl7Pm0SjFrrKfFrcqEGJz/tap-prep?node-id=29-456&t=HCBugw5fvOM1IoMN-1",
+                    image: "https://github.com/user-attachments/assets/49c74137-f1f8-49b0-bcc2-8d651de2e999",
                 },
             ],
             used: [
-                { title: "Collaboration Tool", name: "Discord + Notion + Kakao", image: "" },
-                { title: "Style Library", name: "Tailwind CSS", image: "" },
+                {
+                    title: "Collaboration Tool",
+                    name: "Jira + Kakao",
+                    image: "https://github.com/user-attachments/assets/8bdd87b6-b590-4df2-a9ee-ff5347cb7094",
+                },
+                {
+                    title: "Style Library",
+                    name: "Tailwind CSS",
+                    image: "https://github.com/user-attachments/assets/668ef71d-f688-4845-bb29-b1e6e10d7309",
+                },
+                {
+                    title: "Language",
+                    name: "TypeScript",
+                    image: "https://github.com/user-attachments/assets/281ccb72-a1e3-4d3e-94bf-156b2cdd2a39",
+                },
+                {
+                    title: "Frameword",
+                    name: "React",
+                    image: "https://github.com/user-attachments/assets/3de8d529-9107-4e9f-95b8-e925fa485d48",
+                },
+                {
+                    title: "Client State Library",
+                    name: "React Native",
+                    image: "https://github.com/user-attachments/assets/3de8d529-9107-4e9f-95b8-e925fa485d48",
+                },
+                {
+                    title: "Server State Library",
+                    name: "React Native Chart Kit",
+                    image: "https://github.com/user-attachments/assets/3de8d529-9107-4e9f-95b8-e925fa485d48",
+                },
             ],
         },
     },

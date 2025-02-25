@@ -3,6 +3,7 @@ import { ProjectMainItem } from "../../../mocks/data/type"
 export type ProjectImageSectionProps = {
     oneLineIntroduction: string
     image: string[]
+    id: number
 }
 
 export type ProjectRangeProps = {
