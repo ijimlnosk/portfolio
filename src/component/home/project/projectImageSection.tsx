@@ -4,7 +4,7 @@ const ProjectImageSection = ({ oneLineIntroduction, image, id }: ProjectImageSec
     return (
         <div className="py-12">
             <div className="mb-4" dangerouslySetInnerHTML={{ __html: oneLineIntroduction }} />
-            <div className={`max-w-[1160px] ${id === 1 ? "flex-items -ml-2" : "flex-center"}  flex-row`}>
+            <div className={`max-w-[1160px] max-h-[52vh] ${id === 1 ? "flex-items -ml-2" : "flex-center"}  flex-row`}>
                 {image.map((image, index) => (
                     <>
                         {id === 1 ? (

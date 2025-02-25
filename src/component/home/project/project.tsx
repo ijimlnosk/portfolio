@@ -20,7 +20,7 @@ const Project = () => {
         <>
             {data && (
                 <div
-                    className={`w-full h-full bg-white rounded-r-lg relative pb-4 pl-4 pr-3 flex flex-row ${data[page].id === 2 ? "overflow-y-auto" : ""}`}
+                    className={`w-[1200px] h-full bg-white rounded-r-lg relative pb-4 pl-4 pr-3 flex flex-row ${data[page].id === 2 ? "overflow-y-auto" : ""}`}
                 >
                     <div className="w-full px-6">
                         <div className="w-full h-[50px] pt-4 flex flex-row mb-4 sticky top-0 bg-white">
