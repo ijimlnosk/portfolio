@@ -1,6 +1,6 @@
 export const Skills = [
     { id: 1, title: "React", icon: "/assets/icon/ReactIcon.svg" },
-    { id: 2, title: "ReactNative", icon: "/assets/icon/ReactNativeIcon.svg" },
+    { id: 2, title: "ReactNative", icon: "/assets/icon/ReactIcon.svg" },
     { id: 3, title: "Next.js", icon: "/assets/icon/NextJsIcon.svg" },
     { id: 4, title: "JavsScript", icon: "/assets/icon/JavaScriptIcon.svg" },
     { id: 5, title: "TypeScript", icon: "/assets/icon/TypeScriptIcon.svg" },
