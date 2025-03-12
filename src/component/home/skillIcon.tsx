@@ -1,27 +1,30 @@
 import { SkillIconProps } from "./type"
 import SkillTitleView from "./skillTitleView"
-import NonBlockingModal from "../common/modal/nonBlockingModal"
 import { useDragAndDropSkill } from "../../hooks/useDragAndDropSkill"
-import { useSkillModal } from "../../hooks/useSkillModal"
+import { motion } from "framer-motion"
+import { useState } from "react"
 
-const SkillIcon: React.FC<SkillIconProps> = ({ skill, index, moveSkill }) => {
+const SkillIcon = ({ skill, index, moveSkill }: SkillIconProps) => {
     const { isDragging, dragDropRef } = useDragAndDropSkill({ index, moveSkill, skill })
-    const { isModalOpen, openModal, closeModal, data, isLoading, isError, content, skillTitle } = useSkillModal(skill)
+    const [isClicked, setIsClicked] = useState(false)
+
+    const handleClick = () => {
+        setIsClicked(true)
+        setTimeout(() => setIsClicked(false), 500)
+    }
 
     return (
         <>
-            <div
-                className={` group relative p-1.5 m-1 rounded-lg cursor-pointer transition ${isDragging ? "opacity-0" : "opacity-100"}`}
-                onClick={openModal}
+            <motion.div
+                ref={dragDropRef}
+                onClick={handleClick}
+                animate={isClicked ? { y: [-5, -150, 0] } : {}}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className={`group relative p-1.5 m-1 rounded-lg cursor-pointer transition ${isDragging ? "opacity-0" : "opacity-100"}`}
             >
-                <img ref={dragDropRef} src={skill.icon} alt={skill.title} className="w-10 h-10" />
+                <img src={skill.icon} alt={skill.title} className="w-10 h-10" />
                 <SkillTitleView skillTitle={skill.title} />
-            </div>
-            <NonBlockingModal isOpen={isModalOpen} onClose={closeModal} userInfo={data} skillTitle={skillTitle}>
-                {content}
-                {isLoading && <div>Loading...</div>}
-                {isError && <div>유저 데이터를 불러오는데 실패했습니다.</div>}
-            </NonBlockingModal>
+            </motion.div>
         </>
     )
 }

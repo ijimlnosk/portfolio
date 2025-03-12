@@ -43,7 +43,6 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo, skillTitle, typ
                         setIsMinimized={setIsMinimized}
                         selectedView={selectedView}
                         setSelectedView={setSelectedView}
-                        skillTitle={skillTitle}
                         type={type}
                     />
                     <div className="flex-1">{children}</div>

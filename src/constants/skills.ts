@@ -10,8 +10,7 @@ export const Skills = [
     { id: 9, title: "Discord", icon: "/assets/icon/DiscordIcon.svg" },
     { id: 10, title: "Slack", icon: "/assets/icon/SlackIcon.svg" },
     { id: 11, title: "Jira", icon: "/assets/icon/JiraIcon.svg" },
-    { id: 12, title: "Project", icon: "/assets/icon/ProjectIcon.svg" },
-    { id: 13, title: "UserInfo", icon: "/assets/icon/SettingIcon.svg" },
+    { id: 13, title: "Setting", icon: "/assets/icon/SettingIcon.svg" },
 ]
 
 export const ITEM_TYPE = "SKILL_ITEM"

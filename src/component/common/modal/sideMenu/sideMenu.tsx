@@ -12,12 +12,11 @@ const SideMenu = ({
     setIsMinimized,
     selectedView,
     setSelectedView,
-    skillTitle,
     type,
 }: SettingSideMenuProps) => {
     return (
         <div
-            className={`${skillTitle === "Project" ? "w-[17%]" : "w-[25%]"} ${type === "folder" ? "bg-white bg-opacity-80" : "bg-[#e2e2e2]"}  bg-opacity-60 backdrop-blur-md p-2 rounded-l-lg`}
+            className={`${type === "project" ? "w-[17%]" : "w-[25%]"} ${type === "mobi" ? "bg-white bg-opacity-80" : "bg-[#e2e2e2]"}  bg-opacity-60 backdrop-blur-md p-2 rounded-l-lg`}
         >
             <div className="flex flex-row gap-2 px-2 pt-2 pb-6">
                 <Close onClose={onClose} />
@@ -26,12 +25,12 @@ const SideMenu = ({
             </div>
 
             {/* user info의 side menu 내용 */}
-            {userInfo && skillTitle === "UserInfo" && (
+            {userInfo && type === "kimjinsol" && (
                 <UserInfoSideMenu userInfo={userInfo} selectedView={selectedView} setSelectedView={setSelectedView} />
             )}
             {/* project의 side menu 내용 */}
-            {skillTitle === "Project" && <ProjectSideMenu />}
-            {type === "folder" && <FolderSideMenu />}
+            {type === "projects" && <ProjectSideMenu />}
+            {type === "mobi" && <FolderSideMenu />}
         </div>
     )
 }
