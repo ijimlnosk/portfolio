@@ -1,9 +1,9 @@
-import { useQuery } from "@tanstack/react-query"
+import { useSuspenseQuery } from "@tanstack/react-query"
 import { getProject, getToyProject } from "../api/project"
 import { GetProjectResponse } from "../api/type"
 
 export const useProjectList = () => {
-    const { data, isLoading, isError } = useQuery<GetProjectResponse[]>({
+    const { data, isLoading, isError } = useSuspenseQuery<GetProjectResponse[]>({
         queryKey: ["projectList"],
         queryFn: getProject,
     })
@@ -11,7 +11,7 @@ export const useProjectList = () => {
 }
 
 export const useToyProject = () => {
-    const { data, isLoading, isError } = useQuery<GetProjectResponse>({
+    const { data, isLoading, isError } = useSuspenseQuery<GetProjectResponse>({
         queryKey: ["toyProjectList"],
         queryFn: getToyProject,
     })
