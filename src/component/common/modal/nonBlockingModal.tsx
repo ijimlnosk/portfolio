@@ -1,17 +1,21 @@
-import { useState } from "react"
+import { useId, useState } from "react"
 import ReactDOM from "react-dom"
 import { NonBlockingModalProps } from "./type"
 import { useDraggable } from "../../../hooks/useDraggable"
 import SideMenu from "./sideMenu/sideMenu"
 import { useSelectedViewStore } from "../../../lib/zustand/selectedViewStore"
+import Draggable from "react-draggable"
+import { useModalStore } from "../../../lib/zustand/modalStore"
 
 const NonBlockingModal = ({ isOpen, onClose, children, userInfo, skillTitle, type }: NonBlockingModalProps) => {
+    const modalId = useId()
     const [isMinimized, setIsMinimized] = useState(false)
     const { selectedView, setSelectedView } = useSelectedViewStore()
+    const { activeModalId, setActiveModal } = useModalStore()
     const minimizedArea = document.getElementById("minimized-area")
     const container = isMinimized && minimizedArea ? minimizedArea : document.body
 
-    const { position, isDragging, dragRef, dropRef } = useDraggable({ x: 350, y: 60 })
+    const { position, handleDrag, handleStop } = useDraggable(modalId, { x: 350, y: 60 })
 
     if (!isOpen) return null
 
@@ -24,29 +28,31 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo, skillTitle, typ
             </div>
         ) : (
             <div
-                ref={dropRef}
                 className=" w-full fixed inset-0 z-50 bg-transparent pointer-events-none"
                 style={{
                     left: position.x,
                     top: Math.max(position.y, 50),
-                    opacity: isDragging ? "0" : "1",
+                    // opacity: isDragging ? "0" : "1",
+                    zIndex: activeModalId === modalId ? 1000 : 999,
                 }}
+                onMouseDown={() => setActiveModal(modalId)}
             >
-                <div
-                    ref={dragRef}
-                    className={`h-[84vh] ${skillTitle === "Project" ? "max-w-[1320px] xl:w-[1520px]" : type === "folder" ? "w-[920px] max-h-[700px]" : "w-[820px]"} absolute flex flex-row shadow-lg rounded-lg  pointer-events-auto`}
-                >
-                    <SideMenu
-                        userInfo={userInfo}
-                        onClose={onClose}
-                        isMinimized={isMinimized}
-                        setIsMinimized={setIsMinimized}
-                        selectedView={selectedView}
-                        setSelectedView={setSelectedView}
-                        type={type}
-                    />
-                    <div className="flex-1">{children}</div>
-                </div>
+                <Draggable defaultPosition={position} onDrag={handleDrag} onStop={handleStop}>
+                    <div
+                        className={`h-[84vh] ${skillTitle === "Project" ? "max-w-[1320px] xl:w-[1520px]" : type === "folder" ? "w-[920px] max-h-[700px]" : "w-[820px]"} absolute flex flex-row shadow-lg rounded-lg  pointer-events-auto`}
+                    >
+                        <SideMenu
+                            userInfo={userInfo}
+                            onClose={onClose}
+                            isMinimized={isMinimized}
+                            setIsMinimized={setIsMinimized}
+                            selectedView={selectedView}
+                            setSelectedView={setSelectedView}
+                            type={type}
+                        />
+                        <div className="flex-1">{children}</div>
+                    </div>
+                </Draggable>
             </div>
         ),
         container,

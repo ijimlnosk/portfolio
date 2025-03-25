@@ -1,30 +1,25 @@
-import { useState } from "react"
-import { UseDraggableProps } from "./type"
-import { useDrag, useDrop } from "react-dnd"
+import { useEffect, useState } from "react"
+import { DraggableData } from "react-draggable"
+import { useModalPositionStore } from "../lib/zustand/modalPositionStore"
 
-const ITEM_TYPE = "NON_BLOCKING_MODAL"
+export const useDraggable = (id: string, initialPosition: { x: number; y: number }) => {
+    const { positions, setPosition } = useModalPositionStore()
+    const [position, setPositionState] = useState(positions[id] || initialPosition)
 
-export const useDraggable = (initialPosition: UseDraggableProps) => {
-    const [position, setPosition] = useState<UseDraggableProps>(initialPosition)
+    useEffect(() => {
+        if (!positions[id]) {
+            setPosition(id, initialPosition)
+        }
+    }, [id, positions, initialPosition, setPosition])
 
-    const [{ isDragging }, dragRef] = useDrag({
-        type: ITEM_TYPE,
-        item: () => ({ x: position.x, y: position.y }),
-        collect: monitor => ({
-            isDragging: monitor.isDragging(),
-        }),
-    })
+    const handleDrag = (e: any, data: DraggableData) => {
+        setPositionState({ x: data.x, y: data.y })
+    }
 
-    const [, dropRef] = useDrop({
-        accept: ITEM_TYPE,
-        hover: (item: UseDraggableProps, monitor) => {
-            const delta = monitor.getDifferenceFromInitialOffset()
-            if (!delta) return
-            const newX = item.x + delta.x
-            const newY = item.y + delta.y
-            setPosition({ x: newX, y: newY })
-        },
-    })
+    const handleStop = (e: any, data: DraggableData) => {
+        const newPosition = { x: data.x, y: data.y }
+        setPosition(id, newPosition)
+    }
 
-    return { position, isDragging, dragRef, dropRef }
+    return { position, handleDrag, handleStop }
 }

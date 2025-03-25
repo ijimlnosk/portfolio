@@ -9,3 +9,13 @@ export type ProjectState = {
     nextPage: (dataLength: number) => void
     prevPage: () => void
 }
+
+export type ModalState = {
+    activeModalId: string | null
+    setActiveModal: (id: string) => void
+}
+
+export type ModalPositionState = {
+    positions: Record<string, { x: number; y: number }>
+    setPosition: (id: string, position: { x: number; y: number }) => void
+}
