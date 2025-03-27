@@ -14,8 +14,9 @@ export const useDraggable = (id: string, initialPosition: { x: number; y: number
     }, [id, setPosition])
 
     const handleDrag = (_: any, data: DraggableData) => {
-        const newPosition = { x: data.x, y: data.y }
-        setPosition(id, newPosition)
+        requestAnimationFrame(() => {
+            setPosition(id, { x: data.x, y: data.y })
+        })
     }
 
     const handleStop = (_: any, data: DraggableData) => {

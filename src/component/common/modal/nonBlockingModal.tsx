@@ -30,14 +30,11 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo, skillTitle, typ
             <div
                 className=" w-full fixed inset-0 z-50 bg-transparent pointer-events-none"
                 style={{
-                    left: position.x,
-                    top: Math.max(position.y, 50),
-                    // opacity: isDragging ? "0" : "1",
                     zIndex: activeModalId === modalId ? 1000 : 999,
                 }}
                 onMouseDown={() => setActiveModal(modalId)}
             >
-                <Draggable defaultPosition={position} onDrag={handleDrag} onStop={handleStop}>
+                <Draggable bounds="parent" position={position} onDrag={handleDrag} onStop={handleStop}>
                     <div
                         className={`h-[84vh] ${skillTitle === "Project" ? "max-w-[1320px] xl:w-[1520px]" : type === "folder" ? "w-[920px] max-h-[700px]" : "w-[820px]"} absolute flex flex-row shadow-lg rounded-lg  pointer-events-auto`}
                     >
