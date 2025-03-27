@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { DraggableData } from "react-draggable"
 import { useModalPositionStore } from "../lib/zustand/modalPositionStore"
 
 export const useDraggable = (id: string, initialPosition: { x: number; y: number }) => {
     const { positions, setPosition } = useModalPositionStore()
-    const [position, setPositionState] = useState(positions[id] || initialPosition)
+
+    const position = positions[id] || initialPosition
 
     useEffect(() => {
         if (!positions[id]) {
             setPosition(id, initialPosition)
         }
-    }, [id, positions, initialPosition, setPosition])
+    }, [id, setPosition])
 
     const handleDrag = (_: any, data: DraggableData) => {
-        setPositionState({ x: data.x, y: data.y })
+        const newPosition = { x: data.x, y: data.y }
+        setPosition(id, newPosition)
     }
 
     const handleStop = (_: any, data: DraggableData) => {
