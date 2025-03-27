@@ -12,11 +12,11 @@ export const useDraggable = (id: string, initialPosition: { x: number; y: number
         }
     }, [id, positions, initialPosition, setPosition])
 
-    const handleDrag = (e: any, data: DraggableData) => {
+    const handleDrag = (_: any, data: DraggableData) => {
         setPositionState({ x: data.x, y: data.y })
     }
 
-    const handleStop = (e: any, data: DraggableData) => {
+    const handleStop = (_: any, data: DraggableData) => {
         const newPosition = { x: data.x, y: data.y }
         setPosition(id, newPosition)
     }
