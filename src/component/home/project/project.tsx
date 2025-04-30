@@ -20,9 +20,9 @@ const Project = () => {
         <>
             {data && (
                 <div
-                    className={`w-[1200px] h-full bg-white rounded-r-lg relative pb-4 pl-4 pr-3 flex flex-row ${data[page].id === 2 ? "overflow-y-auto" : ""}`}
+                    className={`w-[1200px] h-full bg-white rounded-r-lg relative pb-4 pl-4 pr-3 ${data[page].id === 2 ? "overflow-y-auto" : ""}`}
                 >
-                    <div className="w-full px-6">
+                    <div className="w-full h-full px-6">
                         <div className="w-full h-[50px] pt-4 flex flex-row mb-4 sticky top-0 bg-white">
                             <div className="flex-items flex-row text-2xl mr-4 gap-4 ">
                                 <div
@@ -47,7 +47,7 @@ const Project = () => {
                             <p className="ml-4 text-2xl flex-items">Project {page + 1}</p>
                         </div>
                         {data && <ProjectView data={data[page]} />}
-                        {data && data[page].id === 2 && <ToyProject />}
+                        <div className="mt-[80px] h-[200px]">{data && data[page].id === 2 && <ToyProject />}</div>
                     </div>
                 </div>
             )}

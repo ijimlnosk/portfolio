@@ -47,7 +47,7 @@ const NonBlockingModal = ({ isOpen, onClose, children, userInfo, skillTitle, typ
                             setSelectedView={setSelectedView}
                             type={type}
                         />
-                        <div className="flex-1">{children}</div>
+                        <div className="flex-1 max-w-[1080px] xl:maxw-[1280px]">{children}</div>
                     </div>
                 </Draggable>
             </div>

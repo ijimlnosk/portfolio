@@ -23,14 +23,19 @@ const SideMenu = ({
                 <Minimized isMinimized={isMinimized} setIsMinimized={setIsMinimized} />
                 <div className="w-3 h-3 bg-green-500 rounded-full" />
             </div>
-
-            {/* user info의 side menu 내용 */}
-            {userInfo && type === "kimjinsol" && (
-                <UserInfoSideMenu userInfo={userInfo} selectedView={selectedView} setSelectedView={setSelectedView} />
-            )}
-            {/* project의 side menu 내용 */}
-            {type === "projects" && <ProjectSideMenu />}
-            {type === "mobi" && <FolderSideMenu />}
+            <div className="border h-[90%]">
+                {/* user info의 side menu 내용 */}
+                {userInfo && type === "kimjinsol" && (
+                    <UserInfoSideMenu
+                        userInfo={userInfo}
+                        selectedView={selectedView}
+                        setSelectedView={setSelectedView}
+                    />
+                )}
+                {/* project의 side menu 내용 */}
+                {type === "projects" && <ProjectSideMenu />}
+                {type === "mobi" && <FolderSideMenu />}
+            </div>
         </div>
     )
 }
