@@ -23,7 +23,7 @@ const SideMenu = ({
                 <Minimized isMinimized={isMinimized} setIsMinimized={setIsMinimized} />
                 <div className="w-3 h-3 bg-green-500 rounded-full" />
             </div>
-            <div className="border h-[90%]">
+            <div className=" h-[90%]">
                 {/* user info의 side menu 내용 */}
                 {userInfo && type === "kimjinsol" && (
                     <UserInfoSideMenu
