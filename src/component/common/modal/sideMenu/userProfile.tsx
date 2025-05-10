@@ -12,7 +12,7 @@ const UserProfile = ({ userInfo, selectedView, setSelectedView }: UserProfilePro
             <div
                 className={`w-24 h-full flex flex-col justify-center hover:text-white ${selectedView === "userInfo" ? "text-white" : "text-black"} `}
             >
-                <p className="font-semibold text-md">{userInfo.userName.split("").join(" ")}</p>
+                {userInfo && <p className="font-semibold text-md">{userInfo.userName.split("").join(" ")}</p>}
                 <p className="font-light text-xs">{userInfo.position}</p>
             </div>
         </div>

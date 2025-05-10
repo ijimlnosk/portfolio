@@ -1,6 +1,8 @@
 import { ProjectSideItem } from "../../../../../mocks/data/type"
 
 const ProjectUsed = ({ used }: ProjectSideItem) => {
+    if (!used) return <div>해당 데이터를 불러오는데 실패했습니다.</div>
+
     return (
         <div className="mt-16">
             <p className="text-xl">What did I Use</p>
