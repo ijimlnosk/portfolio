@@ -14,6 +14,7 @@ const SideMenu = ({
     setSelectedView,
     type,
 }: SettingSideMenuProps) => {
+    console.log(selectedView, "side menu")
     return (
         <div
             className={`${type === "project" ? "w-[17%]" : "w-[25%]"} ${type === "mobi" ? "bg-white bg-opacity-80" : "bg-[#e2e2e2]"}  bg-opacity-60 backdrop-blur-md p-2 rounded-l-lg`}
@@ -32,6 +33,7 @@ const SideMenu = ({
                         setSelectedView={setSelectedView}
                     />
                 )}
+
                 {/* project의 side menu 내용 */}
                 {type === "projects" && <ProjectSideMenu />}
                 {type === "mobi" && <FolderSideMenu />}

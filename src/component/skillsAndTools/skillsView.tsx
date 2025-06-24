@@ -17,7 +17,7 @@ const SkillsView = ({ data, layout = "vertical" }: SkillsViewProps) => {
                             <div className="w-full bg-[#d9d9d9] flex flex-row rounded-md">
                                 {skills.map((skill, index) => (
                                     <div
-                                        key={skill.name}
+                                        key={index}
                                         className={`h-[20px] text-[8px] mx-[1px] ${index === 0 ? "rounded-l-md" : ""}`}
                                         style={{
                                             width: `${skill.percent}%`,

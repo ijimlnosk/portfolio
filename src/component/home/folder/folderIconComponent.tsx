@@ -6,11 +6,15 @@ import FolderView from "./folderView"
 import UserInfo from "../userInfo/userInfo"
 import Project from "../project/project"
 import { useUserInfo } from "../../../hooks/useUserInfo"
+import { useSelectedViewStore } from "../../../lib/zustand/selectedViewStore"
+import SkillsAndTools from "../../skillsAndTools/skillsAndTools"
 
 const ITEM_TYPE = "FOLDER_ICON"
 
 const FolderIconComponent = ({ position, name }: FolerIconComponentProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const { selectedView } = useSelectedViewStore()
 
     const { data } = useUserInfo()
 
@@ -41,7 +45,8 @@ const FolderIconComponent = ({ position, name }: FolerIconComponentProps) => {
                 <p>{name}</p>
             </div>
             <NonBlockingModal userInfo={data} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} type={name}>
-                {name === "kimjinsol" && <UserInfo />}
+                {selectedView === "skillsAndTools" && <SkillsAndTools />}
+                {name === "kimjinsol" && selectedView !== "skillsAndTools" && <UserInfo />}
                 {name === "projects" && <Project />}
                 {name === "mobi" && <FolderView />}
             </NonBlockingModal>
