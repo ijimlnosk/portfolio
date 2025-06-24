@@ -14,7 +14,7 @@ const ITEM_TYPE = "FOLDER_ICON"
 const FolderIconComponent = ({ position, name }: FolerIconComponentProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
-    const { selectedView } = useSelectedViewStore()
+    const { selectedView, setSelectedView } = useSelectedViewStore()
 
     const { data } = useUserInfo()
 
@@ -44,9 +44,16 @@ const FolderIconComponent = ({ position, name }: FolerIconComponentProps) => {
                 <img src="/assets/icon/folderIcon.svg" alt="Foler" />
                 <p>{name}</p>
             </div>
-            <NonBlockingModal userInfo={data} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} type={name}>
-                {selectedView === "skillsAndTools" && <SkillsAndTools />}
-                {name === "kimjinsol" && selectedView !== "skillsAndTools" && <UserInfo />}
+            <NonBlockingModal
+                userInfo={data}
+                isOpen={isModalOpen}
+                onClose={() => {
+                    setIsModalOpen(false)
+                    setSelectedView("userInfo")
+                }}
+                type={name}
+            >
+                {name === "kimjinsol" && (selectedView === "skillsAndTools" ? <SkillsAndTools /> : <UserInfo />)}
                 {name === "projects" && <Project />}
                 {name === "mobi" && <FolderView />}
             </NonBlockingModal>
